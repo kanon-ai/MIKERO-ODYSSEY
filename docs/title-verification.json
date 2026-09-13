@@ -1,0 +1,8 @@
+{
+  "rom_sha256": "60e4a7a6ac9c300033d3be55052c0ec655b79900b2aada056626bb11d19e2e68",
+  "only_title_text_and_header_comment_changed_in_game_source": true,
+  "other_game_sources_identical": true,
+  "exact_title_in_name_table": true,
+  "start_and_walking_music_passed": true,
+  "strict_vram_violations": 0
+}

@@ -1,0 +1,46 @@
+{
+  "layouts": 120,
+  "all_maps_connected": true,
+  "map_size": [
+    64,
+    64
+  ],
+  "maps_sha256": "412a93155c71819c6d7aec5f8f8abcd49751cf3952eee746fac236a761fed372",
+  "graphics_sha256": "664697905bc96203f8a48b48e4ed2269b799d47e22553248129dc489e9f02140",
+  "themes": [
+    "MOSS LANTERNS",
+    "CANDY SPORES",
+    "TIDAL TEMPLE",
+    "CRYSTAL SNOW",
+    "EMBER FOUNDRY",
+    "CLOCKWORK GOLD",
+    "AURORA GARDEN",
+    "STARLESS CROWN"
+  ],
+  "cat_frames": 8,
+  "cat_sprite_planes": 3,
+  "environment_frames_per_floor": 8,
+  "enemy_frames": 4,
+  "item_frames": 4,
+  "max_sprites_per_scanline": 4,
+  "irq_animation_target_hz": {
+    "ntsc": 30,
+    "pal": 25
+  },
+  "rom_bytes": 524288,
+  "mapper": "ASCII16",
+  "code_end": "0x5f8f",
+  "code_used": 8079,
+  "ram_start": "0xc000",
+  "static_ram_bytes": 5720,
+  "ram_end": "0xd658",
+  "required_main_ram_bytes": 32768,
+  "required_vram_bytes": 16384,
+  "viewport_blocks": [
+    15,
+    9
+  ],
+  "scroll_step_pixels": 16,
+  "sha256": "60e4a7a6ac9c300033d3be55052c0ec655b79900b2aada056626bb11d19e2e68",
+  "physical_hardware_tested": false
+}

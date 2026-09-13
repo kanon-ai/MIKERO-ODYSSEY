@@ -1,0 +1,30 @@
+{
+  "recording": "Actual openMSX PSG output, controlled walking in an empty fixture room",
+  "sample_rate": 44100,
+  "seconds": 12.411065759637188,
+  "detected_fundamental_hz": [
+    585.4,
+    585.4,
+    585.4,
+    585.4,
+    658.1,
+    658.1,
+    736.2,
+    585.4,
+    658.1,
+    585.4,
+    585.4,
+    585.4,
+    585.4,
+    658.1,
+    658.1,
+    736.2,
+    585.4,
+    658.1,
+    658.1
+  ],
+  "pcm_peak": 402,
+  "physical_speaker_tested": false,
+  "all_19_pitches_match_PSG_periods": true,
+  "rom_sha256": "a96118eb9a0e4441681a597fdd4b6780000ba15fd26894713263b99d45816ede"
+}

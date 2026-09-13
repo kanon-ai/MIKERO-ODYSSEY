@@ -1,0 +1,158 @@
+{
+  "rom_sha256": "a96118eb9a0e4441681a597fdd4b6780000ba15fd26894713263b99d45816ede",
+  "method": "Injected adjacent stairs; tests every real load_floor transition 1 through 30, separate from input-only campaign.",
+  "checks": [
+    {
+      "floor": 1,
+      "theme": 0,
+      "passed": true
+    },
+    {
+      "floor": 2,
+      "theme": 1,
+      "passed": true
+    },
+    {
+      "floor": 3,
+      "theme": 2,
+      "passed": true
+    },
+    {
+      "floor": 4,
+      "theme": 3,
+      "passed": true
+    },
+    {
+      "floor": 5,
+      "theme": 4,
+      "passed": true
+    },
+    {
+      "floor": 6,
+      "theme": 5,
+      "passed": true
+    },
+    {
+      "floor": 7,
+      "theme": 6,
+      "passed": true
+    },
+    {
+      "floor": 8,
+      "theme": 7,
+      "passed": true
+    },
+    {
+      "floor": 9,
+      "theme": 0,
+      "passed": true
+    },
+    {
+      "floor": 10,
+      "theme": 1,
+      "passed": true
+    },
+    {
+      "floor": 11,
+      "theme": 2,
+      "passed": true
+    },
+    {
+      "floor": 12,
+      "theme": 3,
+      "passed": true
+    },
+    {
+      "floor": 13,
+      "theme": 4,
+      "passed": true
+    },
+    {
+      "floor": 14,
+      "theme": 5,
+      "passed": true
+    },
+    {
+      "floor": 15,
+      "theme": 6,
+      "passed": true
+    },
+    {
+      "floor": 16,
+      "theme": 7,
+      "passed": true
+    },
+    {
+      "floor": 17,
+      "theme": 0,
+      "passed": true
+    },
+    {
+      "floor": 18,
+      "theme": 1,
+      "passed": true
+    },
+    {
+      "floor": 19,
+      "theme": 2,
+      "passed": true
+    },
+    {
+      "floor": 20,
+      "theme": 3,
+      "passed": true
+    },
+    {
+      "floor": 21,
+      "theme": 4,
+      "passed": true
+    },
+    {
+      "floor": 22,
+      "theme": 5,
+      "passed": true
+    },
+    {
+      "floor": 23,
+      "theme": 6,
+      "passed": true
+    },
+    {
+      "floor": 24,
+      "theme": 7,
+      "passed": true
+    },
+    {
+      "floor": 25,
+      "theme": 0,
+      "passed": true
+    },
+    {
+      "floor": 26,
+      "theme": 1,
+      "passed": true
+    },
+    {
+      "floor": 27,
+      "theme": 2,
+      "passed": true
+    },
+    {
+      "floor": 28,
+      "theme": 3,
+      "passed": true
+    },
+    {
+      "floor": 29,
+      "theme": 4,
+      "passed": true
+    },
+    {
+      "floor": 30,
+      "theme": 5,
+      "passed": true
+    }
+  ],
+  "arrival_score": 5800,
+  "strict_vram_violations": 0
+}

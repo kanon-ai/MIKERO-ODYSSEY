@@ -1,0 +1,63 @@
+{
+  "rom_sha256": "a96118eb9a0e4441681a597fdd4b6780000ba15fd26894713263b99d45816ede",
+  "method": "Injected RAM fixtures; actual Z80/VDP execution and keyboard actions",
+  "checks": [
+    {
+      "name": "chest-gold-potion-consumed",
+      "passed": true
+    },
+    {
+      "name": "ration-restores-food",
+      "passed": true
+    },
+    {
+      "name": "keeper-heals-for-five-gold",
+      "passed": true
+    },
+    {
+      "name": "keeper-insufficient-gold",
+      "passed": true
+    },
+    {
+      "name": "spikes-damage-and-remove",
+      "passed": true
+    },
+    {
+      "name": "Z-potion-heals-and-costs-turn",
+      "passed": true
+    },
+    {
+      "name": "no-potion-no-turn",
+      "passed": true
+    },
+    {
+      "name": "wall-occludes-items",
+      "passed": true
+    },
+    {
+      "name": "crown-locked-by-warden",
+      "passed": true
+    },
+    {
+      "name": "warden-defeated",
+      "passed": true
+    },
+    {
+      "name": "crown-victory-after-warden",
+      "passed": true
+    },
+    {
+      "name": "starvation-game-over",
+      "passed": true
+    },
+    {
+      "name": "space-restart-after-death",
+      "passed": true
+    },
+    {
+      "name": "strict-VRAM-timing-fixtures",
+      "passed": true,
+      "violations": 0
+    }
+  ]
+}

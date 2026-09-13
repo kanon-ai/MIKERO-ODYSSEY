@@ -1,0 +1,71 @@
+{
+  "rom_sha256": "a96118eb9a0e4441681a597fdd4b6780000ba15fd26894713263b99d45816ede",
+  "checks": [
+    {
+      "name": "32KiB-main-RAM",
+      "passed": true
+    },
+    {
+      "name": "16KiB-VRAM",
+      "passed": true
+    },
+    {
+      "name": "title-on-boot",
+      "passed": true
+    },
+    {
+      "name": "space-start",
+      "passed": true
+    },
+    {
+      "name": "19-PCG-enemies-loaded",
+      "passed": true
+    },
+    {
+      "name": "player-at-fixed-center",
+      "passed": true
+    },
+    {
+      "name": "turn-based-idle",
+      "passed": true
+    },
+    {
+      "name": "left-arrow-scroll",
+      "passed": true
+    },
+    {
+      "name": "center-stays-fixed-after-scroll",
+      "passed": true
+    },
+    {
+      "name": "solid-wall-no-turn",
+      "passed": true,
+      "x": 1,
+      "turns": 4,
+      "before": 4
+    },
+    {
+      "name": "potion-pickup",
+      "passed": true
+    },
+    {
+      "name": "full-health-does-not-waste-potion",
+      "passed": true
+    },
+    {
+      "name": "strict-VRAM-timing",
+      "passed": true,
+      "violations": 0
+    }
+  ],
+  "physical_hardware_tested": false,
+  "machine": {
+    "machine": "GRAZE_MSX1_RAM32_PAL",
+    "version": "openMSX 21.0-unknown",
+    "ram_bytes": 32768,
+    "vram_bytes": 16384,
+    "emulated_seconds": 5.15949736628538,
+    "physical_hardware_tested": false
+  },
+  "standard": "pal"
+}

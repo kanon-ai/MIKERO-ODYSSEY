@@ -1,0 +1,8 @@
+/outputs/
+/work/build/
+/work/rebuild/
+/work/openmsx/
+/work/*.png
+/work/*.xml
+**/__pycache__/
+/game/play/

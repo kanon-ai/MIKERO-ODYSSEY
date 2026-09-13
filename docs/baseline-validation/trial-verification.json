@@ -1,0 +1,150 @@
+{
+  "rom_sha256": "a96118eb9a0e4441681a597fdd4b6780000ba15fd26894713263b99d45816ede",
+  "checks": [
+    {
+      "name": "ntsc-idle-silent",
+      "passed": true
+    },
+    {
+      "name": "ntsc-one-step-one-note",
+      "passed": true,
+      "x": 11,
+      "pos": 1,
+      "mode": 1
+    },
+    {
+      "name": "ntsc-D5-tone-and-low-volume",
+      "passed": true
+    },
+    {
+      "name": "ntsc-stop-decays-to-silence",
+      "passed": true
+    },
+    {
+      "name": "ntsc-wall-no-music-step",
+      "passed": true
+    },
+    {
+      "name": "ntsc-wait-no-music-step",
+      "passed": true
+    },
+    {
+      "name": "ntsc-attack-no-music-step",
+      "passed": true
+    },
+    {
+      "name": "ntsc-pickup-effect-coexists",
+      "passed": true,
+      "pos": 1,
+      "age": 13,
+      "x": 11
+    },
+    {
+      "name": "ntsc-melody-loops",
+      "passed": true
+    },
+    {
+      "name": "audio-recording-written",
+      "passed": true
+    },
+    {
+      "name": "ntsc-loss-records-score-floor",
+      "passed": true
+    },
+    {
+      "name": "ntsc-restart-keeps-record",
+      "passed": true
+    },
+    {
+      "name": "ntsc-lower-score-keeps-best",
+      "passed": true
+    },
+    {
+      "name": "ntsc-tie-prefers-deeper",
+      "passed": true
+    },
+    {
+      "name": "ntsc-score-saturates",
+      "passed": true
+    },
+    {
+      "name": "ntsc-30-floor-finish-bonus",
+      "passed": true
+    },
+    {
+      "name": "ntsc-strict-VRAM",
+      "passed": true
+    },
+    {
+      "name": "pal-idle-silent",
+      "passed": true
+    },
+    {
+      "name": "pal-one-step-one-note",
+      "passed": true,
+      "x": 11,
+      "pos": 1,
+      "mode": 1
+    },
+    {
+      "name": "pal-D5-tone-and-low-volume",
+      "passed": true
+    },
+    {
+      "name": "pal-stop-decays-to-silence",
+      "passed": true
+    },
+    {
+      "name": "pal-wall-no-music-step",
+      "passed": true
+    },
+    {
+      "name": "pal-wait-no-music-step",
+      "passed": true
+    },
+    {
+      "name": "pal-attack-no-music-step",
+      "passed": true
+    },
+    {
+      "name": "pal-pickup-effect-coexists",
+      "passed": true,
+      "pos": 1,
+      "age": 13,
+      "x": 11
+    },
+    {
+      "name": "pal-melody-loops",
+      "passed": true
+    },
+    {
+      "name": "pal-loss-records-score-floor",
+      "passed": true
+    },
+    {
+      "name": "pal-restart-keeps-record",
+      "passed": true
+    },
+    {
+      "name": "pal-lower-score-keeps-best",
+      "passed": true
+    },
+    {
+      "name": "pal-tie-prefers-deeper",
+      "passed": true
+    },
+    {
+      "name": "pal-score-saturates",
+      "passed": true
+    },
+    {
+      "name": "pal-30-floor-finish-bonus",
+      "passed": true
+    },
+    {
+      "name": "pal-strict-VRAM",
+      "passed": true
+    }
+  ],
+  "method": "Controlled RAM fixtures, real keyboard actions and PSG register reads; not an input-only campaign."
+}

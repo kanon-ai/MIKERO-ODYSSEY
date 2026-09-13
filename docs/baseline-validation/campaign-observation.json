@@ -1,0 +1,103 @@
+{
+  "rom_sha256": "a96118eb9a0e4441681a597fdd4b6780000ba15fd26894713263b99d45816ede",
+  "method": "Keyboard-only run, no gameplay RAM writes. Automated player ran out of potions on floor 14. This is not a 30-floor clear.",
+  "campaign": {
+    "input_only": true,
+    "gameplay_ram_writes": 0,
+    "actions": 1526,
+    "floors": {
+      "1": 0,
+      "2": 111,
+      "3": 224,
+      "4": 345,
+      "5": 452,
+      "6": 563,
+      "7": 675,
+      "8": 779,
+      "9": 892,
+      "10": 1003,
+      "11": 1109,
+      "12": 1228,
+      "13": 1342,
+      "14": 1449
+    },
+    "final": {
+      "mode": 2,
+      "depth": 14,
+      "px": 30,
+      "py": 8,
+      "hp": 0,
+      "maxhp": 32,
+      "level": 5,
+      "xp": 4,
+      "attack": 7,
+      "potions": 0,
+      "gold": 250,
+      "enemy_count": 19,
+      "kill_count": 28,
+      "heal_count": 60,
+      "damage_count": 13,
+      "page": 0,
+      "food": 949,
+      "turn_count": 1520,
+      "screen_count": 1538,
+      "score": 6800,
+      "high_score": 6800
+    },
+    "wall_seconds": 148.46567739999955
+  },
+  "initial_checks": [
+    {
+      "name": "32KiB-main-RAM",
+      "passed": true
+    },
+    {
+      "name": "16KiB-VRAM",
+      "passed": true
+    },
+    {
+      "name": "title-on-boot",
+      "passed": true
+    },
+    {
+      "name": "space-start",
+      "passed": true
+    },
+    {
+      "name": "19-PCG-enemies-loaded",
+      "passed": true
+    },
+    {
+      "name": "player-at-fixed-center",
+      "passed": true
+    },
+    {
+      "name": "turn-based-idle",
+      "passed": true
+    },
+    {
+      "name": "left-arrow-scroll",
+      "passed": true
+    },
+    {
+      "name": "center-stays-fixed-after-scroll",
+      "passed": true
+    },
+    {
+      "name": "solid-wall-no-turn",
+      "passed": true,
+      "x": 1,
+      "turns": 4,
+      "before": 4
+    },
+    {
+      "name": "potion-pickup",
+      "passed": true
+    },
+    {
+      "name": "full-health-does-not-waste-potion",
+      "passed": true
+    }
+  ],
+  "full_thirty_floor_clear_observed": false
+}
