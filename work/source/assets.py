@@ -164,6 +164,17 @@ def generate(out):
  out.mkdir(parents=True,exist_ok=True)
  static=base.make_graphics()[:4096]
  c0,_=cat(0);static=bytearray(static)
+ # Eight 16x16 triangular bearings in previously unused characters 0..31.
+ for direction in range(8):
+  angle=direction*math.pi/4
+  vertices=[(7.5+(x-7.5)*math.cos(angle)-(y-7.5)*math.sin(angle),7.5+(x-7.5)*math.sin(angle)+(y-7.5)*math.cos(angle)) for x,y in [(7.5,1),(13.5,13),(1.5,13)]]
+  p=blank()
+  for y in range(16):
+   for x in range(16):
+    cross=[(vertices[(i+1)%3][0]-vertices[i][0])*(y-vertices[i][1])-(vertices[(i+1)%3][1]-vertices[i][1])*(x-vertices[i][0]) for i in range(3)]
+    p[y][x]=all(v>=0 for v in cross) or all(v<=0 for v in cross)
+  a=pcg(p,[10,10,11,15,15,11,10,10,10,10,10,10,10,10,10,10]);off=direction*32
+  static[off:off+32]=a[:32];static[2048+off:2048+off+32]=a[32:]
  # Text is PCG too: cyan/white/blue lettering, warm gold numerals, and
  # four colored ornamental line glyphs. No raster palette emulation.
  for ch in range(32,128):
@@ -188,6 +199,11 @@ def generate(out):
   e=scenery(0,0);static[(128+4*t)*8:(132+4*t)*8]=e[t*32:t*32+32];static[2048+(128+4*t)*8:2048+(132+4*t)*8]=e[64+t*32:96+t*32]
  for t in (6,7,11,12,13,14,15):
   a=actor(t,0);static[(128+t*4)*8:(132+t*4)*8]=a[:32];static[2048+(128+t*4)*8:2048+(132+t*4)*8]=a[32:]
+ # Rescue-only resting cat and stretcher, unused PCG slots 27/28.
+ resting=matrix(['................','................','................','................','..#....#........','..##..##........','.########.......','.##.##.##.......','.########.####..','..######.######.','...############.','....###########.','.....##....##...','................','................','................'])
+ stretcher=matrix(['################','################','..############..','..############..','..#..........#..','................','................','................','................','................','................','................','................','................','................','................'])
+ for t,p,colors in [(27,resting,[9]*9+[15]*4+[9]*3),(28,stretcher,[10,10,7,7,10]+[1]*11)]:
+  a=pcg(p,colors);static[(128+t*4)*8:(132+t*4)*8]=a[:32];static[2048+(128+t*4)*8:2048+(132+t*4)*8]=a[32:]
  bank=bytes(static)+b''.join(cat(i)[0] for i in range(8))+b''.join(cat(i)[1] for i in range(8))
  assert len(bank)==0x1500
  bank+=b''.join(scenery(t,f) for t in range(8) for f in range(8))

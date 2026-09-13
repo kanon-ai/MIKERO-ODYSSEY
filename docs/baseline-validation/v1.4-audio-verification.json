@@ -1,0 +1,10 @@
+{
+  "rom_sha256": "c282c01733083add93a23136bd886697a9290e861e5e5613aed5c8290abba566",
+  "native_openmsx_recording": true,
+  "duration_seconds": 13.42609977324263,
+  "sample_rate": 44100,
+  "peak_pcm": 930,
+  "final_silence_rms": 0.0,
+  "scenario": "Sixteen wait actions, with extra input-free pauses after actions 4 and 12. Every wait consumes one game turn.",
+  "subjective_listening_approval_pending": true
+}

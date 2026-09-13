@@ -1,0 +1,159 @@
+{
+  "rom_sha256": "c282c01733083add93a23136bd886697a9290e861e5e5613aed5c8290abba566",
+  "checks": [
+    {
+      "name": "ntsc-idle-freezes-game-and-music",
+      "passed": true
+    },
+    {
+      "name": "ntsc-move-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "ntsc-wait-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "ntsc-attack-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "ntsc-potion-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "ntsc-wall-no-fragment",
+      "passed": true
+    },
+    {
+      "name": "ntsc-unused-potion-no-fragment",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keeper-keeps-existing-no-turn-rule",
+      "passed": true
+    },
+    {
+      "name": "ntsc-triplet-rearticulates",
+      "passed": true,
+      "volumes": [
+        0,
+        8,
+        2,
+        8,
+        2,
+        8,
+        4,
+        2,
+        0
+      ]
+    },
+    {
+      "name": "ntsc-quiet-harmony",
+      "passed": true
+    },
+    {
+      "name": "ntsc-no-next-fragment-without-action",
+      "passed": true
+    },
+    {
+      "name": "ntsc-no-queued-playback",
+      "passed": true
+    },
+    {
+      "name": "ntsc-stairs-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "ntsc-result-stops-music",
+      "passed": true
+    },
+    {
+      "name": "ntsc-restart-resets-phrase",
+      "passed": true
+    },
+    {
+      "name": "recorded-sixteen-action-fragments",
+      "passed": true
+    },
+    {
+      "name": "ntsc-strict-VRAM",
+      "passed": true
+    },
+    {
+      "name": "pal-idle-freezes-game-and-music",
+      "passed": true
+    },
+    {
+      "name": "pal-move-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "pal-wait-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "pal-attack-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "pal-potion-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "pal-wall-no-fragment",
+      "passed": true
+    },
+    {
+      "name": "pal-unused-potion-no-fragment",
+      "passed": true
+    },
+    {
+      "name": "pal-keeper-keeps-existing-no-turn-rule",
+      "passed": true
+    },
+    {
+      "name": "pal-triplet-rearticulates",
+      "passed": true,
+      "volumes": [
+        0,
+        2,
+        8,
+        2,
+        8,
+        4,
+        2,
+        0
+      ]
+    },
+    {
+      "name": "pal-quiet-harmony",
+      "passed": true
+    },
+    {
+      "name": "pal-no-next-fragment-without-action",
+      "passed": true
+    },
+    {
+      "name": "pal-no-queued-playback",
+      "passed": true
+    },
+    {
+      "name": "pal-stairs-one-fragment",
+      "passed": true
+    },
+    {
+      "name": "pal-result-stops-music",
+      "passed": true
+    },
+    {
+      "name": "pal-restart-resets-phrase",
+      "passed": true
+    },
+    {
+      "name": "pal-strict-VRAM",
+      "passed": true
+    }
+  ],
+  "method": "Controlled game-room fixtures, real key input, BIOS-frame PSG register traces and native audio recording. No physical speaker or hardware test."
+}

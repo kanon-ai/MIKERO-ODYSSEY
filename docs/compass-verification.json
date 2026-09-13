@@ -1,0 +1,173 @@
+{
+  "rom_sha256": "5d138914be9047e8b0cb68a35f26b46a0e213bcd86ca58daeb1ebba16eefab43",
+  "checks": [
+    {
+      "name": "ntsc-goal-loaded-before-discovery",
+      "passed": true
+    },
+    {
+      "name": "ntsc-bearing-0",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyhelp-0",
+      "passed": true
+    },
+    {
+      "name": "ntsc-bearing-1",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyhelp-1",
+      "passed": true
+    },
+    {
+      "name": "ntsc-bearing-2",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyhelp-2",
+      "passed": true
+    },
+    {
+      "name": "ntsc-bearing-3",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyhelp-3",
+      "passed": true
+    },
+    {
+      "name": "ntsc-bearing-4",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyhelp-4",
+      "passed": true
+    },
+    {
+      "name": "ntsc-bearing-5",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyhelp-5",
+      "passed": true
+    },
+    {
+      "name": "ntsc-bearing-6",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyhelp-6",
+      "passed": true
+    },
+    {
+      "name": "ntsc-bearing-7",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyhelp-7",
+      "passed": true
+    },
+    {
+      "name": "ntsc-at-goal-no-false-direction",
+      "passed": true
+    },
+    {
+      "name": "ntsc-floor-2-target",
+      "passed": true
+    },
+    {
+      "name": "ntsc-floor-30-target",
+      "passed": true
+    },
+    {
+      "name": "ntsc-strict-VRAM",
+      "passed": true
+    },
+    {
+      "name": "pal-goal-loaded-before-discovery",
+      "passed": true
+    },
+    {
+      "name": "pal-bearing-0",
+      "passed": true
+    },
+    {
+      "name": "pal-keyhelp-0",
+      "passed": true
+    },
+    {
+      "name": "pal-bearing-1",
+      "passed": true
+    },
+    {
+      "name": "pal-keyhelp-1",
+      "passed": true
+    },
+    {
+      "name": "pal-bearing-2",
+      "passed": true
+    },
+    {
+      "name": "pal-keyhelp-2",
+      "passed": true
+    },
+    {
+      "name": "pal-bearing-3",
+      "passed": true
+    },
+    {
+      "name": "pal-keyhelp-3",
+      "passed": true
+    },
+    {
+      "name": "pal-bearing-4",
+      "passed": true
+    },
+    {
+      "name": "pal-keyhelp-4",
+      "passed": true
+    },
+    {
+      "name": "pal-bearing-5",
+      "passed": true
+    },
+    {
+      "name": "pal-keyhelp-5",
+      "passed": true
+    },
+    {
+      "name": "pal-bearing-6",
+      "passed": true
+    },
+    {
+      "name": "pal-keyhelp-6",
+      "passed": true
+    },
+    {
+      "name": "pal-bearing-7",
+      "passed": true
+    },
+    {
+      "name": "pal-keyhelp-7",
+      "passed": true
+    },
+    {
+      "name": "pal-at-goal-no-false-direction",
+      "passed": true
+    },
+    {
+      "name": "pal-floor-2-target",
+      "passed": true
+    },
+    {
+      "name": "pal-floor-30-target",
+      "passed": true
+    },
+    {
+      "name": "pal-strict-VRAM",
+      "passed": true
+    }
+  ]
+}

@@ -126,15 +126,7 @@ def dungeon(seed):
  r.shuffle(free)
  # 18 regular enemies plus the warden; only 20 slots are allocated in RAM.
  for t in [32,33,34,35]*4+[33]+[3]*12+[4]*18+[5]*7+[6]*14+[8]*8:m[free.pop()]=t
- for _ in range(3):
-  choices=[p for p in free if all(m[n]==0 for n in (p-1,p+1,p-64,p+64))]
-  r.shuffle(choices)
-  for p in choices:
-   m[p]=7
-   try:audit(m)
-   except AssertionError:m[p]=0;continue
-   free.remove(p);break
-  else:raise AssertionError('No safe keeper location')
+ # One rabbit Keeper per floor, at the opening room.
  return m
 
 def audit(m):

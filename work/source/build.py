@@ -33,6 +33,6 @@ rom+=(BUILD/'graphics.bin').read_bytes()+(BUILD/'dungeons.bin').read_bytes()
 assert len(rom)==524288
 out=OUT/'MIKERO-ODYSSEY.rom'
 if not out.exists() or out.read_bytes()!=rom:out.write_bytes(rom)
-report.update(rom_bytes=len(rom),mapper='ASCII16',code_end=hex(high),code_used=high-0x4000,ram_start='0xc000',static_ram_bytes=ram_bytes,ram_end=hex(0xc000+ram_bytes),required_main_ram_bytes=32768,required_vram_bytes=16384,viewport_blocks=[15,9],scroll_step_pixels=16,sha256=hashlib.sha256(rom).hexdigest(),physical_hardware_tested=False)
+report.update(rom_bytes=len(rom),mapper='ASCII16',code_end=hex(high),code_used=high-0x4000,ram_start='0xc000',static_ram_bytes=ram_bytes,ram_end=hex(0xc000+ram_bytes),required_main_ram_bytes=32768,required_vram_bytes=16384,viewport_blocks=[15,9],scroll_step_pixels=16,scroll_display_phases_pixels=[8,8],music_loop_actions=64,sha256=hashlib.sha256(rom).hexdigest(),physical_hardware_tested=False)
 (OUT/'build-report.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))

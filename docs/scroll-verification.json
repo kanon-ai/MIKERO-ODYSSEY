@@ -1,0 +1,264 @@
+{
+  "rom_sha256": "5d138914be9047e8b0cb68a35f26b46a0e213bcd86ca58daeb1ebba16eefab43",
+  "checks": [
+    {
+      "name": "ntsc-1,0-two-flips-one-turn",
+      "passed": true,
+      "times_ms": [
+        188.457,
+        217.931
+      ]
+    },
+    {
+      "name": "ntsc-1,0-one-keeper-in-both-phases",
+      "passed": true
+    },
+    {
+      "name": "ntsc-1,0-final-scene-upload",
+      "passed": true
+    },
+    {
+      "name": "ntsc-1,0-fixed-cat-HUD",
+      "passed": true
+    },
+    {
+      "name": "ntsc-1,0-exact-eight-pixel-phase",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "ntsc-1,0-half-visible-at-least-one-frame",
+      "passed": true
+    },
+    {
+      "name": "ntsc--1,0-two-flips-one-turn",
+      "passed": true,
+      "times_ms": [
+        178.307,
+        210.013
+      ]
+    },
+    {
+      "name": "ntsc--1,0-one-keeper-in-both-phases",
+      "passed": true
+    },
+    {
+      "name": "ntsc--1,0-final-scene-upload",
+      "passed": true
+    },
+    {
+      "name": "ntsc--1,0-fixed-cat-HUD",
+      "passed": true
+    },
+    {
+      "name": "ntsc--1,0-exact-eight-pixel-phase",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "ntsc--1,0-half-visible-at-least-one-frame",
+      "passed": true
+    },
+    {
+      "name": "ntsc-0,1-two-flips-one-turn",
+      "passed": true,
+      "times_ms": [
+        177.085,
+        232.329
+      ]
+    },
+    {
+      "name": "ntsc-0,1-one-keeper-in-both-phases",
+      "passed": true
+    },
+    {
+      "name": "ntsc-0,1-final-scene-upload",
+      "passed": true
+    },
+    {
+      "name": "ntsc-0,1-fixed-cat-HUD",
+      "passed": true
+    },
+    {
+      "name": "ntsc-0,1-exact-eight-pixel-phase",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "ntsc-0,1-half-visible-at-least-one-frame",
+      "passed": true
+    },
+    {
+      "name": "ntsc-0,-1-two-flips-one-turn",
+      "passed": true,
+      "times_ms": [
+        176.637,
+        211.686
+      ]
+    },
+    {
+      "name": "ntsc-0,-1-one-keeper-in-both-phases",
+      "passed": true
+    },
+    {
+      "name": "ntsc-0,-1-final-scene-upload",
+      "passed": true
+    },
+    {
+      "name": "ntsc-0,-1-fixed-cat-HUD",
+      "passed": true
+    },
+    {
+      "name": "ntsc-0,-1-exact-eight-pixel-phase",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "ntsc-0,-1-half-visible-at-least-one-frame",
+      "passed": true
+    },
+    {
+      "name": "ntsc-wait-single-draw",
+      "passed": true
+    },
+    {
+      "name": "ntsc-wall-no-scroll-no-turn",
+      "passed": true
+    },
+    {
+      "name": "ntsc-strict-VRAM",
+      "passed": true,
+      "violations": 0
+    },
+    {
+      "name": "pal-1,0-two-flips-one-turn",
+      "passed": true,
+      "times_ms": [
+        172.498,
+        214.042
+      ]
+    },
+    {
+      "name": "pal-1,0-one-keeper-in-both-phases",
+      "passed": true
+    },
+    {
+      "name": "pal-1,0-final-scene-upload",
+      "passed": true
+    },
+    {
+      "name": "pal-1,0-fixed-cat-HUD",
+      "passed": true
+    },
+    {
+      "name": "pal-1,0-exact-eight-pixel-phase",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "pal-1,0-half-visible-at-least-one-frame",
+      "passed": true
+    },
+    {
+      "name": "pal--1,0-two-flips-one-turn",
+      "passed": true,
+      "times_ms": [
+        172.496,
+        214.04
+      ]
+    },
+    {
+      "name": "pal--1,0-one-keeper-in-both-phases",
+      "passed": true
+    },
+    {
+      "name": "pal--1,0-final-scene-upload",
+      "passed": true
+    },
+    {
+      "name": "pal--1,0-fixed-cat-HUD",
+      "passed": true
+    },
+    {
+      "name": "pal--1,0-exact-eight-pixel-phase",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "pal--1,0-half-visible-at-least-one-frame",
+      "passed": true
+    },
+    {
+      "name": "pal-0,1-two-flips-one-turn",
+      "passed": true,
+      "times_ms": [
+        159.414,
+        201.1
+      ]
+    },
+    {
+      "name": "pal-0,1-one-keeper-in-both-phases",
+      "passed": true
+    },
+    {
+      "name": "pal-0,1-final-scene-upload",
+      "passed": true
+    },
+    {
+      "name": "pal-0,1-fixed-cat-HUD",
+      "passed": true
+    },
+    {
+      "name": "pal-0,1-exact-eight-pixel-phase",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "pal-0,1-half-visible-at-least-one-frame",
+      "passed": true
+    },
+    {
+      "name": "pal-0,-1-two-flips-one-turn",
+      "passed": true,
+      "times_ms": [
+        159.413,
+        201.101
+      ]
+    },
+    {
+      "name": "pal-0,-1-one-keeper-in-both-phases",
+      "passed": true
+    },
+    {
+      "name": "pal-0,-1-final-scene-upload",
+      "passed": true
+    },
+    {
+      "name": "pal-0,-1-fixed-cat-HUD",
+      "passed": true
+    },
+    {
+      "name": "pal-0,-1-exact-eight-pixel-phase",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "pal-0,-1-half-visible-at-least-one-frame",
+      "passed": true
+    },
+    {
+      "name": "pal-wait-single-draw",
+      "passed": true
+    },
+    {
+      "name": "pal-wall-no-scroll-no-turn",
+      "passed": true
+    },
+    {
+      "name": "pal-strict-VRAM",
+      "passed": true,
+      "violations": 0
+    }
+  ],
+  "method": "Actual Z80 execution and VRAM page-flip snapshots, controlled room and real directional keys."
+}

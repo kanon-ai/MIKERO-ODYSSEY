@@ -1,0 +1,6 @@
+{
+  "rom_sha256": "c282c01733083add93a23136bd886697a9290e861e5e5613aed5c8290abba566",
+  "maximum_observed_IRQ_ms": 8.717588408581278,
+  "below_NTSC_frame_budget": true,
+  "strict_VRAM_violations": 0
+}

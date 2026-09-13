@@ -5,8 +5,8 @@
     64,
     64
   ],
-  "maps_sha256": "412a93155c71819c6d7aec5f8f8abcd49751cf3952eee746fac236a761fed372",
-  "graphics_sha256": "664697905bc96203f8a48b48e4ed2269b799d47e22553248129dc489e9f02140",
+  "maps_sha256": "378738b2c0612c947c6edd65e18ba7f5511f1d5c19e36479a2b8b63e17e6dec7",
+  "graphics_sha256": "3a3d0935e941b683d2b529f8bf29b4794204a284c6b10428133b0213afc077c6",
   "themes": [
     "MOSS LANTERNS",
     "CANDY SPORES",
@@ -29,11 +29,11 @@
   },
   "rom_bytes": 524288,
   "mapper": "ASCII16",
-  "code_end": "0x5f8f",
-  "code_used": 8079,
+  "code_end": "0x6b08",
+  "code_used": 11016,
   "ram_start": "0xc000",
-  "static_ram_bytes": 5720,
-  "ram_end": "0xd658",
+  "static_ram_bytes": 6510,
+  "ram_end": "0xd96e",
   "required_main_ram_bytes": 32768,
   "required_vram_bytes": 16384,
   "viewport_blocks": [
@@ -41,6 +41,11 @@
     9
   ],
   "scroll_step_pixels": 16,
-  "sha256": "60e4a7a6ac9c300033d3be55052c0ec655b79900b2aada056626bb11d19e2e68",
+  "scroll_display_phases_pixels": [
+    8,
+    8
+  ],
+  "music_loop_actions": 64,
+  "sha256": "5d138914be9047e8b0cb68a35f26b46a0e213bcd86ca58daeb1ebba16eefab43",
   "physical_hardware_tested": false
 }
