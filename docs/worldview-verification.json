@@ -1,0 +1,80 @@
+{
+  "rom_sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
+  "checks": [
+    {
+      "name": "ntsc-creature-contact",
+      "passed": true,
+      "message": "A CREATURE BUMPS INTO YOU!"
+    },
+    {
+      "name": "ntsc-king-contact",
+      "passed": true,
+      "message": "THE KING BUMPS INTO YOU!"
+    },
+    {
+      "name": "ntsc-creature-return-reward",
+      "passed": true,
+      "message": "POOF! +XP +GOLD"
+    },
+    {
+      "name": "ntsc-king-return-crown-hint",
+      "passed": true,
+      "message": "POOF! THE CROWN IS AHEAD!"
+    },
+    {
+      "name": "ntsc-keeper-treatment",
+      "passed": true,
+      "message": "KEEPER: ALL PATCHED UP!"
+    },
+    {
+      "name": "ntsc-key-help-visible",
+      "passed": true
+    },
+    {
+      "name": "ntsc-strict-VRAM",
+      "passed": true
+    },
+    {
+      "name": "pal-creature-contact",
+      "passed": true,
+      "message": "A CREATURE BUMPS INTO YOU!"
+    },
+    {
+      "name": "pal-king-contact",
+      "passed": true,
+      "message": "THE KING BUMPS INTO YOU!"
+    },
+    {
+      "name": "pal-creature-return-reward",
+      "passed": true,
+      "message": "POOF! +XP +GOLD"
+    },
+    {
+      "name": "pal-king-return-crown-hint",
+      "passed": true,
+      "message": "POOF! THE CROWN IS AHEAD!"
+    },
+    {
+      "name": "pal-keeper-treatment",
+      "passed": true,
+      "message": "KEEPER: ALL PATCHED UP!"
+    },
+    {
+      "name": "pal-key-help-visible",
+      "passed": true
+    },
+    {
+      "name": "pal-strict-VRAM",
+      "passed": true
+    },
+    {
+      "name": "paw-tap-wording-present",
+      "passed": true
+    },
+    {
+      "name": "old-story-messages-absent",
+      "passed": true
+    }
+  ],
+  "method": "Injected RAM fixtures, actual emulated keyboard actions and displayed name-table text; NTSC/PAL MSX1 RAM32K VRAM16K; not physical hardware."
+}

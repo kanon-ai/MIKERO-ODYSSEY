@@ -1,0 +1,272 @@
+{
+  "rom_sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
+  "checks": [
+    {
+      "name": "ntsc-starvation-held-key-no-restart",
+      "passed": true
+    },
+    {
+      "name": "ntsc-starvation-rescue-before-results",
+      "passed": true,
+      "phases": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "ntsc-starvation-two-keepers-and-stretcher",
+      "passed": true
+    },
+    {
+      "name": "ntsc-starvation-carrying-starts",
+      "passed": true
+    },
+    {
+      "name": "ntsc-starvation-quiet-rescue-text",
+      "passed": true
+    },
+    {
+      "name": "ntsc-starvation-brief-scene",
+      "passed": true,
+      "seconds": 0.9513670033481905
+    },
+    {
+      "name": "ntsc-starvation-removed-message-and-record",
+      "passed": true
+    },
+    {
+      "name": "ntsc-starvation-restart",
+      "passed": true
+    },
+    {
+      "name": "ntsc-trap-held-key-no-restart",
+      "passed": true
+    },
+    {
+      "name": "ntsc-trap-rescue-before-results",
+      "passed": true,
+      "phases": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "ntsc-trap-two-keepers-and-stretcher",
+      "passed": true
+    },
+    {
+      "name": "ntsc-trap-carrying-starts",
+      "passed": true
+    },
+    {
+      "name": "ntsc-trap-quiet-rescue-text",
+      "passed": true
+    },
+    {
+      "name": "ntsc-trap-brief-scene",
+      "passed": true,
+      "seconds": 0.9509867874268938
+    },
+    {
+      "name": "ntsc-trap-removed-message-and-record",
+      "passed": true
+    },
+    {
+      "name": "ntsc-trap-restart",
+      "passed": true
+    },
+    {
+      "name": "ntsc-enemy-held-key-no-restart",
+      "passed": true
+    },
+    {
+      "name": "ntsc-enemy-rescue-before-results",
+      "passed": true,
+      "phases": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "ntsc-enemy-two-keepers-and-stretcher",
+      "passed": true
+    },
+    {
+      "name": "ntsc-enemy-carrying-starts",
+      "passed": true
+    },
+    {
+      "name": "ntsc-enemy-quiet-rescue-text",
+      "passed": true
+    },
+    {
+      "name": "ntsc-enemy-brief-scene",
+      "passed": true,
+      "seconds": 0.9508708509042361
+    },
+    {
+      "name": "ntsc-enemy-removed-message-and-record",
+      "passed": true
+    },
+    {
+      "name": "ntsc-enemy-restart",
+      "passed": true
+    },
+    {
+      "name": "ntsc-strict-VRAM",
+      "passed": true
+    },
+    {
+      "name": "pal-starvation-held-key-no-restart",
+      "passed": true
+    },
+    {
+      "name": "pal-starvation-rescue-before-results",
+      "passed": true,
+      "phases": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "pal-starvation-two-keepers-and-stretcher",
+      "passed": true
+    },
+    {
+      "name": "pal-starvation-carrying-starts",
+      "passed": true
+    },
+    {
+      "name": "pal-starvation-quiet-rescue-text",
+      "passed": true
+    },
+    {
+      "name": "pal-starvation-brief-scene",
+      "passed": true,
+      "seconds": 1.116449716374567
+    },
+    {
+      "name": "pal-starvation-removed-message-and-record",
+      "passed": true
+    },
+    {
+      "name": "pal-starvation-restart",
+      "passed": true
+    },
+    {
+      "name": "pal-trap-held-key-no-restart",
+      "passed": true
+    },
+    {
+      "name": "pal-trap-rescue-before-results",
+      "passed": true,
+      "phases": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "pal-trap-two-keepers-and-stretcher",
+      "passed": true
+    },
+    {
+      "name": "pal-trap-carrying-starts",
+      "passed": true
+    },
+    {
+      "name": "pal-trap-quiet-rescue-text",
+      "passed": true
+    },
+    {
+      "name": "pal-trap-brief-scene",
+      "passed": true,
+      "seconds": 1.1145704272470383
+    },
+    {
+      "name": "pal-trap-removed-message-and-record",
+      "passed": true
+    },
+    {
+      "name": "pal-trap-restart",
+      "passed": true
+    },
+    {
+      "name": "pal-enemy-held-key-no-restart",
+      "passed": true
+    },
+    {
+      "name": "pal-enemy-rescue-before-results",
+      "passed": true,
+      "phases": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "pal-enemy-two-keepers-and-stretcher",
+      "passed": true
+    },
+    {
+      "name": "pal-enemy-carrying-starts",
+      "passed": true
+    },
+    {
+      "name": "pal-enemy-quiet-rescue-text",
+      "passed": true
+    },
+    {
+      "name": "pal-enemy-brief-scene",
+      "passed": true,
+      "seconds": 1.1163552909657497
+    },
+    {
+      "name": "pal-enemy-removed-message-and-record",
+      "passed": true
+    },
+    {
+      "name": "pal-enemy-restart",
+      "passed": true
+    },
+    {
+      "name": "pal-strict-VRAM",
+      "passed": true
+    }
+  ],
+  "method": "Three controlled exhaustion causes, actual emulated key input, VRAM flips and native screenshot; not physical hardware."
+}

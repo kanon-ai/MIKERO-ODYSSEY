@@ -1,0 +1,33 @@
+{
+  "rom_sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
+  "baseline_version": "v1.5.5-test",
+  "baseline_rom_sha256": "5d138914be9047e8b0cb68a35f26b46a0e213bcd86ca58daeb1ebba16eefab43",
+  "game_source_only_changes": {
+    "messages": {
+      "THE WARDEN STRIKES!": "THE KING BUMPS INTO YOU!",
+      "AN ENEMY HITS YOU!": "A CREATURE BUMPS INTO YOU!",
+      "PAW PUNCH! PON!": "PAW TAP! PON!",
+      "KING: POOF! CLAIM THE CROWN!": "POOF! THE CROWN IS AHEAD!",
+      "KEEPER: YOUR LIGHT IS RESTORED.": "KEEPER: ALL PATCHED UP!"
+    },
+    "removed_rescue_caption": "JUST RESTING. SEE YOU SOON!"
+  },
+  "exact_source_change_verified": true,
+  "other_source_files_byte_identical": [
+    "animation.s",
+    "assets.py",
+    "base_assets.py",
+    "build.py",
+    "crt0.s"
+  ],
+  "graphics_and_all_maps_byte_identical": true,
+  "static_ram_bytes_unchanged": 6510,
+  "emulator_check_counts": {
+    "worldview-verification.json": 16,
+    "rescue-verification.json": 50,
+    "verification-fixtures.json": 14,
+    "scroll-verification.json": 54,
+    "compass-verification.json": 42
+  },
+  "method": "Exact source transformation plus byte comparison of graphics and all map banks against the published baseline."
+}

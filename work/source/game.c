@@ -323,7 +323,6 @@ void rescue_scene(void) {
   rescue_tile(x,11,SHRINE);rescue_tile(x+8,11,SHRINE);
   rescue_tile(x+4,11,27);
   rescue_tile(x+2,13,28);rescue_tile(x+4,13,28);rescue_tile(x+6,13,28);
-  text(4,18,"JUST RESTING. SEE YOU SOON!");
   /* Existing rabbit ear/blink frames, only during this scene. */
   MEM(0x7000)=1;pose=n&3;
   for(i=0;i<3;i++) {
@@ -391,7 +390,7 @@ void enemy_turn(void) {
   if(dx+dy>10)continue;
   if(dx+dy==1){
    n=et[i]==BOSS?4:1+(et[i]-SLIME)/2+depth/4;
-   say(et[i]==BOSS?"THE WARDEN STRIKES!":"AN ENEMY HITS YOU!");hurt(n);continue;
+   say(et[i]==BOSS?"THE KING BUMPS INTO YOU!":"A CREATURE BUMPS INTO YOU!");hurt(n);continue;
   }
   if(!visible(ex[i],ey[i]))continue;
   if(et[i]==SLIME && (turns&1))continue;
@@ -413,11 +412,11 @@ void tick_turn(void) {
 void fight(u8 i) {
  u8 dmg=attack+(random8()&1);
  hit_x=120+(ex[i]-px)*16;hit_y=87+(ey[i]-py)*16;
- sfx(80);say("PAW PUNCH! PON!");
+ sfx(80);say("PAW TAP! PON!");
  if(eh[i]<=dmg) {
   eh[i]=0;kill_count++;add_score(et[i]==BOSS?200:20+(et[i]-SLIME)*10);xp+=et[i]==BOSS?12:2;gold+=gold<250?1:0;
   say("POOF! +XP +GOLD");
-  if(et[i]==BOSS)say("KING: POOF! CLAIM THE CROWN!");
+  if(et[i]==BOSS)say("POOF! THE CROWN IS AHEAD!");
   if(xp>=5+level*3){xp=0;if(level<15){level++;maxhp+=2;attack++;}hp=maxhp;say("LEVEL UP! HEALTH RESTORED.");sfx(24);}
  }else eh[i]-=dmg;
  tick_turn();
@@ -428,7 +427,7 @@ void move_player(i8 dx,i8 dy) {
  if(t==WALL){say("A WALL BLOCKS THE WAY.");return;}
  if(i!=255){fight(i);return;}
  if(t==SHRINE){
-  if(gold>=5 && hp<maxhp){gold-=5;hp=maxhp;say("KEEPER: YOUR LIGHT IS RESTORED.");sfx(30);}
+  if(gold>=5 && hp<maxhp){gold-=5;hp=maxhp;say("KEEPER: ALL PATCHED UP!");sfx(30);}
   else say("KEEPER: FULL HEAL FOR 5 GOLD.");return;
  }
  px=nx;py=ny;scroll_dx=dx;scroll_dy=dy;walk_timer=16;say(theme());

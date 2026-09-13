@@ -29,8 +29,8 @@
   },
   "rom_bytes": 524288,
   "mapper": "ASCII16",
-  "code_end": "0x6b08",
-  "code_used": 11016,
+  "code_end": "0x6ada",
+  "code_used": 10970,
   "ram_start": "0xc000",
   "static_ram_bytes": 6510,
   "ram_end": "0xd96e",
@@ -46,6 +46,6 @@
     8
   ],
   "music_loop_actions": 64,
-  "sha256": "5d138914be9047e8b0cb68a35f26b46a0e213bcd86ca58daeb1ebba16eefab43",
+  "sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
   "physical_hardware_tested": false
 }
