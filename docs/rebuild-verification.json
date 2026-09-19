@@ -1,4 +1,5 @@
 {
-  "rom_sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
-  "source_archive_rebuild_identical": true
+  "rom_sha256": "91844ca8cc107fcee1d1e03921e60d80e4fa8d44c045541328b75ed75f3fb530",
+  "byte_identical": true,
+  "method": "Rebuild from release repository source with SDCC and generated assets."
 }

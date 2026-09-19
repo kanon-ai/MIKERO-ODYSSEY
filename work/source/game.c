@@ -32,6 +32,9 @@ u8 map[4096],seen[512],screen[768],sight[135];
 u8 scroll_screen[768],scroll_under[4];
 const u8 *view_origin;
 u8 view_visible(u8 cell);
+u8 render_x,render_y,render_cell,render_cols,render_rows;
+const u8 *render_map;
+void render_view(void);
 i8 scroll_dx,scroll_dy;
 u8 *copy_dst;const u8 *copy_src;u16 copy_len;
 void copy_bytes(void) __naked {
@@ -56,12 +59,17 @@ const char *message;
 u8 old_hook[5],anim_lock,anim_div,anim_clock,anim_pose,anim_oldpose,anim_oldphase,anim_theme;
 u8 walk_timer,effect_kind,effect_age,anim_size,anim_banks,anim_item,anim_sat[41],hit_x,hit_y;
 u16 anim_updates,anim_ptr,anim_target;
+u8 anim_gap;
 extern const u8 effect_patterns[];
 void install_animation(void);
 /* Run record survives SPACE restart, but not power-off. */
 u16 score,high_score,music_period;
 u8 record_floor,music_pos,music_age,music_volume;
 u8 rescue_pending,rescue_phase;
+u8 difficulty,depth_max,potion_limit,keeper_used,boss_charge,ending_pending,ending_phase,menu_key;
+u16 best_score[2];u8 best_floor[2];
+volatile u8 frame_tick;
+extern const u8 gate_patterns[],gate_colors[];
 u8 goal_x,goal_y,goal_known;
 /* Action-driven fragments of the Nutcracker March, not one note per step.
    Sequencing and decay run in the VBlank hook; no queued or idle phrases. */
@@ -70,8 +78,9 @@ void music_reset(void);
 void music_step(void);
 void add_score(u16 n){if(score>65535-n)score=65535;else score+=n;}
 void finish_run(u8 result){
- mode=result;rescue_pending=result==2;
+ mode=result;rescue_pending=result==2;ending_pending=result==3;repeat=1;
  if(score>high_score || (score==high_score && depth>record_floor)){high_score=score;record_floor=depth;}
+ best_score[difficulty]=high_score;best_floor[difficulty]=record_floor;
 }
 void regwrite(void) __naked {
  __asm
@@ -138,6 +147,10 @@ void input_read(void) __naked {
  ld a,#5
  call 0x0141
  cpl
+ ld b,a
+ and #0x20
+ ld (_menu_key),a
+ ld a,b
  and #0x80
  ld (_keys),a
  ld a,#3
@@ -162,7 +175,11 @@ void put(u8 x,u8 y,u8 t) {map[index(x,y)]=t;}
 u8 dist(u8 a,u8 b) {return a>b?a-b:b-a;}
 void say(const char *s) {message=s;dirty=1;}
 void text(u8 x,u8 y,const char *s) {u16 p=(u16)y*32+x;while(*s && x++<32 && p<768)screen[p++]=*s++;}
-void number(u8 x,u8 y,u16 n,u8 digits) {u16 p=(u16)y*32+x+digits;while(digits--){screen[--p]='0'+n%10;n/=10;}}
+const u16 decimal_places[]={10000,1000,100,10,1};
+void number(u8 x,u8 y,u16 n,u8 digits) {
+ u16 p=(u16)y*32+x,v;u8 c,i=5-digits;
+ while(i<5){v=decimal_places[i++];c='0';while(n>=v){n-=v;c++;}screen[p++]=c;}
+}
 void clear_screen(void) __naked {
  __asm
  ld hl,#_screen
@@ -262,25 +279,15 @@ void compass(void) {
  c=d*4;screen[29]=c;screen[30]=c+1;screen[61]=c+2;screen[62]=c+3;
 }
 void draw(void) {
- u8 x,y,wx,wy,t,i;u16 p;
+ u8 x,y,i;
  if((scroll_dx || scroll_dy) && mode==1){copy_src=screen;copy_dst=scroll_screen;copy_len=768;copy_bytes();}
  clear_screen();
  view_origin=map+index(px,py);
- text(1,0,"MIKERO");text(10,0,"F");number(11,0,depth,2);text(14,0,"LV");number(16,0,level,2);text(21,0,"G");number(22,0,gold,3);
+ text(1,0,difficulty?"NORMAL":"EASY");text(10,0,"F");number(11,0,depth,2);text(14,0,"LV");number(16,0,level,2);text(21,0,"G");number(22,0,gold,3);
  text(1,1,"HP");number(4,1,hp,2);text(6,1,"/");number(7,1,maxhp,2);text(11,1,"POT");number(15,1,potions,2);text(20,1,"FOOD");number(25,1,food,3);
  if(mode==1)compass();
  for(x=0;x<32;x++){screen[64+x]=94+(x&3);screen[672+x]=94+(x&3);}
- for(y=0;y<9;y++)for(x=0;x<15;x++) {
-  wx=px+x-7;wy=py+y-4;t=DARK;
-  if(wx<64 && wy<64) {
-   p=index(wx,wy);
-   if(view_visible(y*15+x)) {
-    seen[p>>3]|=1<<(p&7);t=map[p];
-   } else if(seen[p>>3]&(1<<(p&7)))t=map[p]==WALL?OLDWALL:OLDFLOOR;
-  }
-  sight[y*15+x]=t!=DARK && t!=OLDWALL && t!=OLDFLOOR;
-  block(x*2+1,y*2+3,t);
- }
+ render_view();
  /* Overlay each visible actor once instead of searching 19 actors per cell. */
  for(i=0;i<enemy_count;i++)if(eh[i]) {
   x=ex[i]-px+7;y=ey[i]-py+4;
@@ -290,13 +297,13 @@ void draw(void) {
  block(15,11,HERO);
  if(fx){block(fx_x,fx_y,SPARK);fx=0;}
  text(1,22,message);
- text(1,23,mode>=2?"SPACE:TRY AGAIN":"ARROWS:MOVE SPACE:WAIT Z:HEAL");
+ text(1,23,mode>=2?"SPACE:TRY AGAIN  X:TITLE":"ARROWS:MOVE SPACE:WAIT Z:HEAL");
  if(mode>=2){
   for(y=7;y<19;y++)text(2,y,"                            ");
-  if(mode==3)text(4,8,"30 FLOORS! WELL DONE!");
-  text(5,10,"FLOOR");number(12,10,depth,2);text(16,10,"/ 30");
+  if(mode==3)text(9,8,"GATE CLOSED!");
+  text(5,10,"FLOOR");number(12,10,depth,2);text(16,10,"/");number(18,10,depth_max,2);
   text(5,12,"SCORE");number(14,12,score,5);
-  text(5,14,"BEST");number(14,14,high_score,5);
+  text(5,14,difficulty?"BEST NORMAL":"BEST EASY");number(17,14,high_score,5);
   text(5,15,"BEST RUN FLOOR");number(21,15,record_floor,2);
   text(5,17,"SPACE: TRY AGAIN");
  }
@@ -347,8 +354,34 @@ void graphics(void) {
  reg_num=1;reg_val=0xe2;regwrite();reg_num=5;reg_val=0x36;regwrite();reg_num=6;reg_val=7;regwrite();
  anim_oldphase=255;anim_oldpose=255;anim_lock=0;
 }
+/* The portal uses 48 temporary PCG characters. Restore normal art afterwards. */
+void closing_scene(void) {
+ u8 f,x,y,b,i;
+ scroll_dx=0;scroll_dy=0;effect_age=0;walk_timer=0;anim_lock=1;
+ anim_sat[0]=208;vaddr=0x1b00;vsrc=anim_sat;vlen=1;upload();
+ reg_num=5;reg_val=0x36;regwrite();
+ for(f=0;f<4;f++) {
+  ending_phase=f+1;clear_screen();
+  text(f==3?8:5,3,f==3?"THE GATE CLOSES.":"ONE LAST LITTLE PAW...");
+  for(y=0;y<8;y++)for(x=0;x<6;x++)screen[(u16)(y+7)*32+x+13]=176+y*6+x;
+  block(15,16,HERO);block(9,16,SHRINE);block(21,16,SHRINE);
+  for(b=0;b<3;b++) {
+   vaddr=176*8+(u16)b*2048;vsrc=gate_patterns+(u16)f*384;vlen=384;upload();
+   vaddr+=0x2000;vsrc=gate_colors;upload();
+  }
+  present();
+  if(!f){
+   /* The same three face/detail planes as the title's idle cat, at (120,128). */
+   MEM(0x7000)=1;vaddr=0x3800;vsrc=(const u8*)0x9200;vlen=96;upload();
+   for(b=0;b<3;b++){anim_sat[b*4]=127;anim_sat[b*4+1]=120;anim_sat[b*4+2]=b*4;anim_sat[b*4+3]=b==0?15:b==1?3:10;}
+   anim_sat[12]=208;vaddr=0x1b00;vsrc=anim_sat;vlen=13;upload();
+  }
+  for(i=0;i<(f==3?24:12);i++)frame();
+ }
+ ending_pending=0;graphics();dirty=1;
+}
 void load_floor(void) {
- u16 n;u8 t,i;
+ u16 n;u8 t,i,pc=0,cc=0,fc=0;
  scroll_dx=0;scroll_dy=0;
  anim_lock=1;
  variant=(seed+depth*13)%120;
@@ -356,26 +389,34 @@ void load_floor(void) {
  vsrc=(const u8*)(0x8000+(u16)(variant&3)*4096);
  for(n=0;n<4096;n++)map[n]=vsrc[n];
  for(n=0;n<512;n++)seen[n]=0;
- enemy_count=0;goal_known=0;
+ enemy_count=0;goal_known=0;keeper_used=0;boss_charge=0;
  for(n=0;n<4096;n++) {
   t=map[n];
+  /* Keep the opening supplies, spread the rest across each original layout. */
+  if(t==POTION && n!=259){if((pc*5+variant)%12>=(difficulty?3:5))map[n]=FLOOR;pc++;}
+  if(t==CHEST && n!=199){if(difficulty || (cc*3+variant)%7>=2)map[n]=FLOOR;cc++;}
+  if(difficulty && t==FOOD && n!=451){if((fc*5+variant)%14>=2)map[n]=FLOOR;fc++;}
   if(t==STAIRS || t==CROWN){goal_x=n&63;goal_y=n>>6;goal_known=1;}
   if(t>=32 && t<=36){
    i=enemy_count++;
    ex[i]=n&63;ey[i]=n>>6;et[i]=t-32+SLIME;eh[i]=2+(t-32)*2+depth/2;
-   if(t==36){if(depth==30){et[i]=BOSS;eh[i]=24;}else{et[i]=KNIGHT;eh[i]=5+depth;}}
+   if(difficulty)eh[i]=5+(t-32)*2+depth/3+depth/8;
+   if(t==36){if(depth==depth_max){et[i]=BOSS;eh[i]=difficulty?96:24;}else{et[i]=KNIGHT;eh[i]=difficulty?9+depth/2+depth/8:5+depth;}}
    map[n]=FLOOR;
   }
-  if(t==CROWN && depth<30)map[n]=STAIRS;
+  if(t==CROWN && depth<depth_max)map[n]=STAIRS;
  }
  px=5;py=5;foodclock=0;
- if(food<250)food=250;
+ if(food<(difficulty?150:250))food=difficulty?150:250;
  graphics();say(theme());sfx(40);
 }
 void new_game(void) {
- seed=(u8)rng;depth=1;hp=24;maxhp=24;level=1;xp=0;attack=3;potions=3;gold=0;
+ seed=(u8)rng;depth=1;hp=24;maxhp=24;level=1;xp=0;attack=3;potions=difficulty?2:3;gold=0;
+ depth_max=difficulty?30:15;potion_limit=difficulty?5:9;
+ high_score=best_score[difficulty];record_floor=best_floor[difficulty];
+ rescue_pending=0;ending_pending=0;ending_phase=0;repeat=0;
  score=0;music_reset();
- food=400;mode=1;turns=0;turn_count=0;kill_count=0;heal_count=0;damage_count=0;
+ food=difficulty?300:400;mode=1;turns=0;turn_count=0;kill_count=0;heal_count=0;damage_count=0;
  load_floor();
 }
 void hurt(u8 n) {
@@ -390,8 +431,13 @@ void enemy_turn(void) {
   if(dx+dy>10)continue;
   if(dx+dy==1){
    n=et[i]==BOSS?4:1+(et[i]-SLIME)/2+depth/4;
+   if(difficulty){
+    n=1+(et[i]-SLIME)/2+depth/6;
+    if(et[i]==BOSS){if(!boss_charge){boss_charge=1;say("THE KING TAKES A DEEP BREATH!");continue;}boss_charge=0;n=10;}
+   }
    say(et[i]==BOSS?"THE KING BUMPS INTO YOU!":"A CREATURE BUMPS INTO YOU!");hurt(n);continue;
   }
+  if(difficulty && et[i]==BOSS && boss_charge){boss_charge=0;say("POOF! THE KING MISSES!");continue;}
   if(!visible(ex[i],ey[i]))continue;
   if(et[i]==SLIME && (turns&1))continue;
   if(et[i]==KNIGHT && (turns%3)==0)continue;
@@ -405,7 +451,7 @@ void enemy_turn(void) {
 void tick_turn(void) {
  music_step();turns++;turn_count++;enemy_turn();
  if(mode!=1)return;
- if(food) {food--;if(++foodclock==14){foodclock=0;if(hp<maxhp)hp++;}}
+ if(food) {food--;if(++foodclock==(difficulty?28:14)){foodclock=0;if(hp<maxhp)hp++;}}
  else {say("STARVING! FIND SOME FOOD.");hurt(1);}
  dirty=1;
 }
@@ -416,8 +462,8 @@ void fight(u8 i) {
  if(eh[i]<=dmg) {
   eh[i]=0;kill_count++;add_score(et[i]==BOSS?200:20+(et[i]-SLIME)*10);xp+=et[i]==BOSS?12:2;gold+=gold<250?1:0;
   say("POOF! +XP +GOLD");
-  if(et[i]==BOSS)say("POOF! THE CROWN IS AHEAD!");
-  if(xp>=5+level*3){xp=0;if(level<15){level++;maxhp+=2;attack++;}hp=maxhp;say("LEVEL UP! HEALTH RESTORED.");sfx(24);}
+  if(et[i]==BOSS)say("POOF! THE GATE IS AHEAD!");
+  if(xp>=5+level*3){xp=0;if(level<15){level++;maxhp+=2;attack++;}if(difficulty){hp+=6;if(hp>maxhp)hp=maxhp;}else hp=maxhp;say(difficulty?"LEVEL UP! +6 HEALTH.":"LEVEL UP! HEALTH RESTORED.");sfx(24);}
  }else eh[i]-=dmg;
  tick_turn();
  if(!eh[i] && mode==1){effect_kind=4;effect_age=32;}
@@ -427,26 +473,32 @@ void move_player(i8 dx,i8 dy) {
  if(t==WALL){say("A WALL BLOCKS THE WAY.");return;}
  if(i!=255){fight(i);return;}
  if(t==SHRINE){
+  if(difficulty){
+   if(keeper_used)say("KEEPER: NO BANDAGES LEFT.");
+   else if(gold>=15 && hp<maxhp){gold-=15;hp+=24;if(hp>maxhp)hp=maxhp;keeper_used=1;say("KEEPER: ALL PATCHED UP!");sfx(30);}
+   else say("KEEPER: +24 HP FOR 15 GOLD.");
+   return;
+  }
   if(gold>=5 && hp<maxhp){gold-=5;hp=maxhp;say("KEEPER: ALL PATCHED UP!");sfx(30);}
   else say("KEEPER: FULL HEAL FOR 5 GOLD.");return;
  }
  px=nx;py=ny;scroll_dx=dx;scroll_dy=dy;walk_timer=16;say(theme());
- if(t==POTION){if(potions<99)potions++;put(px,py,FLOOR);say("POTION FOUND. Z TO DRINK.");sfx(35);}
+ if(t==POTION){if(potions<potion_limit){potions++;put(px,py,FLOOR);say("POTION FOUND. Z TO DRINK.");sfx(35);}else say("POT PACK FULL. LEFT HERE.");}
  if(t==GOLD){add_score(25);gold=gold<246?gold+5:250;put(px,py,FLOOR);say("FIVE GOLD PIECES FOUND.");sfx(48);}
- if(t==CHEST){add_score(100);gold=gold<241?gold+10:250;if(potions<99)potions++;put(px,py,FLOOR);say("CHEST: 10 GOLD AND A POTION!");sfx(20);}
+ if(t==CHEST){add_score(100);gold=gold<241?gold+10:250;put(px,py,FLOOR);if(potions<potion_limit){potions++;say("CHEST: 10 GOLD AND A POTION!");}else{put(px,py,POTION);say("CHEST: GOLD. POTION LEFT HERE.");}sfx(20);}
  if(t==FOOD){food+=100;if(food>999)food=999;put(px,py,FLOOR);say("FRESH RATIONS. +100 FOOD");sfx(55);}
  if(t==TRAP){put(px,py,FLOOR);say("SPIKES! YOU LOSE 3 HEALTH.");hurt(3);}
  if(t==STAIRS){add_score(200);depth++;load_floor();music_step();return;}
  if(t==CROWN){
   for(i=0;i<enemy_count;i++)if(et[i]==BOSS && eh[i]){say("MEET THE SLIME KING FIRST!");tick_turn();return;}
-  add_score(3000);finish_run(3);say("ALL 30 FLOORS! WELL DONE!");sfx(16);return;
+  add_score(difficulty?3000:1500);finish_run(3);say("THE GATE IS CLOSED. WELL DONE!");sfx(16);return;
  }
  if(mode==1)tick_turn();
 }
 void heal(void) {
  if(!potions){say("NO POTIONS LEFT.");return;}
  if(hp==maxhp){say("YOUR HEALTH IS ALREADY FULL.");return;}
- potions--;heal_count++;hp+=16;if(hp>maxhp)hp=maxhp;say("POTION: 16 HEALTH RESTORED.");sfx(32);tick_turn();
+ potions--;heal_count++;hp+=difficulty?12:16;if(hp>maxhp)hp=maxhp;say(difficulty?"POTION: 12 HEALTH RESTORED.":"POTION: 16 HEALTH RESTORED.");sfx(32);tick_turn();
 }
 void title(void) {
  u8 x,y;
@@ -457,7 +509,7 @@ void title(void) {
  for(y=8;y<14;y+=2)for(x=3;x<29;x+=2)block(x,y,FLOOR);
  for(x=3;x<29;x+=2){block(x,8,WALL);block(x,14,WALL);}
  block(5,10,SLIME);block(9,12,POTION);block(13,10,HERO);block(17,12,CHEST);block(21,10,KNIGHT);block(25,12,CROWN);
- text(6,17,"SPACE / FIRE TO BEGIN");text(2,19,"30 FLOORS. YOUR BEST ADVENTURE");text(2,20,"MOVE TO ATTACK. Z/FIRE2 HEAL");text(4,23,"WALK A LITTLE. FIND A LOT.");present();
+ text(6,17,"SPACE / FIRE TO BEGIN");text(6,19,difficulty?"NORMAL - 30 FLOORS":"EASY   - 15 FLOORS");text(3,20,"LEFT/RIGHT: EASY OR NORMAL");text(4,23,"WALK A LITTLE. FIND A LOT.");present();
 }
 void hardware(void) __naked {
  __asm
@@ -468,6 +520,8 @@ void hardware(void) __naked {
  ld (0xf3eb),a
  ld a,#2
  call 0x005f
+ xor a
+ ld (0xf3db),a ; BIOS CLIKSW: disable keyboard click, keep PSG music and effects.
  ld a,#7
  out (0xa0),a
  in a,(0xa2)
@@ -485,17 +539,18 @@ void main(void) {
  for(;;) {
   frame();input_read();
   input=keys?10:trigger?9:joy;
-  if(mode==0){random8();if(input==9 && prev_input!=9){new_game();draw();}}
-  else if(mode>=2){if(!input)repeat=0;if(input==9 && prev_input!=9){new_game();draw();}}
+  if(mode==0){random8();if((input==3 || input==7) && input!=prev_input){difficulty^=1;title();}if(input==9 && prev_input!=9){new_game();draw();}}
+  else if(mode>=2){if(!input)repeat=0;if(menu_key){mode=0;depth=0;graphics();title();}else if(input==9 && prev_input!=9 && !repeat){new_game();draw();}}
   else {
    if(!input)repeat=0;
-   if(input && (input!=prev_input || !repeat)) {
-    repeat=9;
+   if(input && (input!=prev_input || !repeat || (i8)(frame_tick-repeat)>=0)) {
+    repeat=frame_tick+6;if(!repeat)repeat=1;
     if(input==1)move_player(0,-1);if(input==3)move_player(1,0);if(input==5)move_player(0,1);if(input==7)move_player(-1,0);
     if(input==9){say("YOU WAIT AND LISTEN.");tick_turn();}
     if(input==10)heal();
-   }else if(repeat)repeat--;
+   }
    if(rescue_pending)rescue_scene();
+   if(ending_pending)closing_scene();
    if(dirty)draw();
   }
   prev_input=input;

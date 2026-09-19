@@ -1,12 +1,12 @@
 {
-  "rom_sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
+  "rom_sha256": "91844ca8cc107fcee1d1e03921e60d80e4fa8d44c045541328b75ed75f3fb530",
   "checks": [
     {
       "name": "ntsc-1,0-two-flips-one-turn",
       "passed": true,
       "times_ms": [
-        188.457,
-        217.931
+        111.465,
+        143.154
       ]
     },
     {
@@ -34,8 +34,8 @@
       "name": "ntsc--1,0-two-flips-one-turn",
       "passed": true,
       "times_ms": [
-        178.307,
-        210.013
+        119.487,
+        153.434
       ]
     },
     {
@@ -63,8 +63,8 @@
       "name": "ntsc-0,1-two-flips-one-turn",
       "passed": true,
       "times_ms": [
-        177.085,
-        232.329
+        120.056,
+        151.168
       ]
     },
     {
@@ -92,8 +92,8 @@
       "name": "ntsc-0,-1-two-flips-one-turn",
       "passed": true,
       "times_ms": [
-        176.637,
-        211.686
+        119.947,
+        153.319
       ]
     },
     {
@@ -134,8 +134,8 @@
       "name": "pal-1,0-two-flips-one-turn",
       "passed": true,
       "times_ms": [
-        172.498,
-        214.042
+        116.151,
+        157.699
       ]
     },
     {
@@ -163,8 +163,8 @@
       "name": "pal--1,0-two-flips-one-turn",
       "passed": true,
       "times_ms": [
-        172.496,
-        214.04
+        101.137,
+        142.693
       ]
     },
     {
@@ -192,8 +192,8 @@
       "name": "pal-0,1-two-flips-one-turn",
       "passed": true,
       "times_ms": [
-        159.414,
-        201.1
+        101.139,
+        142.687
       ]
     },
     {
@@ -221,8 +221,8 @@
       "name": "pal-0,-1-two-flips-one-turn",
       "passed": true,
       "times_ms": [
-        159.413,
-        201.101
+        101.252,
+        142.802
       ]
     },
     {

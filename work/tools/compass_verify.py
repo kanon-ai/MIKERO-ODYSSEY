@@ -21,9 +21,10 @@ for std in ('ntsc','pal'):
    check(std+'-keyhelp-'+str(d),b'Z:HEAL' in screen[736:])
   put('px',55);put('py',55);put('dirty',1);e.run_for(.6)
   check(std+'-at-goal-no-false-direction',e.read_block('memory',S['screen']+29,2)==b'  ')
-  for floor in [2,30]:
+  for floor in [2,15,30]:
+   put('difficulty',int(floor==30));put('depth_max',30 if floor==30 else 15)
    put('depth',floor-1);put('px',54);put('py',55);put('enemy_count',0);e.write_block('memory',S['map']+55*64+55,bytes([2]));tap(128)
    m=e.read_block('memory',S['map'],4096)
-   check(std+'-floor-'+str(floor)+'-target',get('depth')==floor and m[get('goal_y')*64+get('goal_x')]==(9 if floor==30 else 2))
+   check(std+'-floor-'+str(floor)+'-target',get('depth')==floor and m[get('goal_y')*64+get('goal_x')]==(9 if floor in (15,30) else 2))
   check(std+'-strict-VRAM',e.timing_violations()==0)
 (O/'compass-verification.json').write_text(json.dumps(dict(rom_sha256=hashlib.sha256((O/'MIKERO-ODYSSEY.rom').read_bytes()).hexdigest(),checks=checks),indent=2))

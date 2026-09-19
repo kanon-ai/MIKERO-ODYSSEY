@@ -102,6 +102,14 @@ def rabbit_keeper(frame):
 def actor(t,frame):
  if t==7:return rabbit_keeper(frame)
  if 11<=t<=15:return friendly_enemy(t,frame)
+ if t==9:
+  p=blank()
+  for y in range(1,15):
+   for x in range(2,14):
+    rim=abs(x-7.5)>=4.5 and y>=5 or y in (2,3) and 5<=x<=10 or y==14
+    light=4<=x<=11 and 5<=y<=12 and (x+y+frame*2)%5==0
+    p[y][x]=rim or light
+  return pcg(p,[10,10,15,10,7,7,5,7,7,5,7,7,5,10,10,1])
  p=matrix(base.ART[t]);colors=base.COLORS[t][:]
  if t==11: # squash/stretch slime
   if frame&1:p=[blank()[0]]+p[:-1]
@@ -160,6 +168,25 @@ def effects():
   out+=sprite(p)
  return out
 
+def gate_ending():
+ patterns=bytearray();colors=bytearray()
+ for phase in range(4):
+  image=[[0]*48 for _ in range(64)]
+  for y in range(64):
+   for x in range(48):
+    oval=((x-23.5)/20)**2+((y-31.5)/29)**2
+    rim=.84<=oval<=1.04
+    opening=abs(x-23.5)<[16,11,5,0][phase] and oval<.76
+    wave=opening and ((x+y+phase*3)%9 in (0,1) or (x-y-phase*2)%13==0)
+    seal=phase==3 and (abs(x-23.5)+abs(y-32) in (5.5,6.5) or x in (23,24) and 13<y<51)
+    image[y][x]=rim or wave or seal
+  for cy in range(8):
+   for cx in range(6):
+    for yy in range(8):
+     y=cy*8+yy;patterns.append(sum(image[y][cx*8+i]<<(7-i) for i in range(8)))
+     if phase==0:colors.append(([10,15,7,5,7,13,15,10][cy]<<4)|1)
+ return bytes(patterns),bytes(colors)
+
 def generate(out):
  out.mkdir(parents=True,exist_ok=True)
  static=base.make_graphics()[:4096]
@@ -197,7 +224,7 @@ def generate(out):
  static[168*8:172*8]=c0[:32];static[2048+168*8:2048+172*8]=c0[32:]
  for t in (0,1):
   e=scenery(0,0);static[(128+4*t)*8:(132+4*t)*8]=e[t*32:t*32+32];static[2048+(128+4*t)*8:2048+(132+4*t)*8]=e[64+t*32:96+t*32]
- for t in (6,7,11,12,13,14,15):
+ for t in (6,7,9,11,12,13,14,15):
   a=actor(t,0);static[(128+t*4)*8:(132+t*4)*8]=a[:32];static[2048+(128+t*4)*8:2048+(132+t*4)*8]=a[32:]
  # Rescue-only resting cat and stretcher, unused PCG slots 27/28.
  resting=matrix(['................','................','................','................','..#....#........','..##..##........','.########.......','.##.##.##.......','.########.####..','..######.######.','...############.','....###########.','.....##....##...','................','................','................'])
@@ -217,5 +244,7 @@ def generate(out):
  blob=b''.join(maps);(out/'dungeons.bin').write_bytes(blob)
  fx=effects()
  inc='_effect_patterns::\n'+''.join('.db '+','.join('0x%02x'%n for n in fx[i:i+16])+'\n' for i in range(0,len(fx),16))
+ for label,data in zip(('_gate_patterns','_gate_colors'),gate_ending()):
+  inc+=label+'::\n'+''.join('.db '+','.join('0x%02x'%n for n in data[i:i+16])+'\n' for i in range(0,len(data),16))
  (out/'visual_data.inc').write_text(inc)
  return dict(layouts=120,all_maps_connected=True,map_size=[64,64],maps_sha256=hashlib.sha256(blob).hexdigest(),graphics_sha256=hashlib.sha256(bank).hexdigest(),themes=THEMES,cat_frames=8,cat_sprite_planes=3,environment_frames_per_floor=8,enemy_frames=4,item_frames=4,max_sprites_per_scanline=4,irq_animation_target_hz={'ntsc':30,'pal':25})

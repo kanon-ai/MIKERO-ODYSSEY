@@ -1,5 +1,5 @@
 {
-  "rom_sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
+  "rom_sha256": "b2a2ea2e5d27a7703c44cbd103c15a45cd77dc57a34b79060b25fae2d0dde30a",
   "checks": [
     {
       "name": "ntsc-starvation-held-key-no-restart",
@@ -34,7 +34,7 @@
     {
       "name": "ntsc-starvation-brief-scene",
       "passed": true,
-      "seconds": 0.9513670033481905
+      "seconds": 0.9010642414049839
     },
     {
       "name": "ntsc-starvation-removed-message-and-record",
@@ -77,7 +77,7 @@
     {
       "name": "ntsc-trap-brief-scene",
       "passed": true,
-      "seconds": 0.9509867874268938
+      "seconds": 0.9010656382305573
     },
     {
       "name": "ntsc-trap-removed-message-and-record",
@@ -120,7 +120,7 @@
     {
       "name": "ntsc-enemy-brief-scene",
       "passed": true,
-      "seconds": 0.9508708509042361
+      "seconds": 0.9011597842742596
     },
     {
       "name": "ntsc-enemy-removed-message-and-record",
@@ -167,7 +167,7 @@
     {
       "name": "pal-starvation-brief-scene",
       "passed": true,
-      "seconds": 1.116449716374567
+      "seconds": 1.0580710676915634
     },
     {
       "name": "pal-starvation-removed-message-and-record",
@@ -210,7 +210,7 @@
     {
       "name": "pal-trap-brief-scene",
       "passed": true,
-      "seconds": 1.1145704272470383
+      "seconds": 1.0567826357819214
     },
     {
       "name": "pal-trap-removed-message-and-record",
@@ -253,7 +253,7 @@
     {
       "name": "pal-enemy-brief-scene",
       "passed": true,
-      "seconds": 1.1163552909657497
+      "seconds": 1.0564010230350505
     },
     {
       "name": "pal-enemy-removed-message-and-record",

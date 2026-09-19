@@ -1,0 +1,23 @@
+{
+  "rom_sha256": "91844ca8cc107fcee1d1e03921e60d80e4fa8d44c045541328b75ed75f3fb530",
+  "checks": [
+    {
+      "standard": "ntsc",
+      "forced_click_on_before_init": true,
+      "click_off_after_init_and_keys": true,
+      "music_advanced": true,
+      "psg_writes": 155,
+      "vram_violations": 0
+    },
+    {
+      "standard": "pal",
+      "forced_click_on_before_init": true,
+      "click_off_after_init_and_keys": true,
+      "music_advanced": true,
+      "psg_writes": 140,
+      "vram_violations": 0
+    }
+  ],
+  "graphics_and_maps_unchanged": true,
+  "blueMSX_and_physical_audio_tested": false
+}

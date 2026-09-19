@@ -1,0 +1,43 @@
+{
+  "baseline": {
+    "rom_sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
+    "measurements": [
+      {
+        "standard": "ntsc",
+        "moves_in_2_4_seconds": 7,
+        "median_move_interval_ms": 387.685865102966,
+        "max_irq_ms": 8.718426503926402,
+        "strict_VRAM_violations": 0
+      },
+      {
+        "standard": "pal",
+        "moves_in_2_4_seconds": 6,
+        "median_move_interval_ms": 415.9257671016849,
+        "max_irq_ms": 8.716750313238819,
+        "strict_VRAM_violations": 0
+      }
+    ]
+  },
+  "candidate": {
+    "rom_sha256": "b2a2ea2e5d27a7703c44cbd103c15a45cd77dc57a34b79060b25fae2d0dde30a",
+    "measurements": [
+      {
+        "standard": "ntsc",
+        "moves_in_2_4_seconds": 15,
+        "median_move_interval_ms": 166.8812656357166,
+        "max_irq_ms": 6.982172315197488,
+        "strict_VRAM_violations": 0,
+        "speedup": 2.323123950589166
+      },
+      {
+        "standard": "pal",
+        "moves_in_2_4_seconds": 15,
+        "median_move_interval_ms": 159.49373453888694,
+        "max_irq_ms": 6.982172315195712,
+        "strict_VRAM_violations": 0,
+        "speedup": 2.6077874990147407
+      }
+    ]
+  },
+  "method": "Actual held-key movement in identical empty room; emulated elapsed time, NTSC/PAL, not host wall-clock or real hardware."
+}

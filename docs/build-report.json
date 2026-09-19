@@ -6,7 +6,7 @@
     64
   ],
   "maps_sha256": "378738b2c0612c947c6edd65e18ba7f5511f1d5c19e36479a2b8b63e17e6dec7",
-  "graphics_sha256": "3a3d0935e941b683d2b529f8bf29b4794204a284c6b10428133b0213afc077c6",
+  "graphics_sha256": "b8ab37cd650406d593934ede6237f8a24c7e4406945e53e9e2a6bedde7ec68f5",
   "themes": [
     "MOSS LANTERNS",
     "CANDY SPORES",
@@ -29,11 +29,11 @@
   },
   "rom_bytes": 524288,
   "mapper": "ASCII16",
-  "code_end": "0x6ada",
-  "code_used": 10970,
+  "code_end": "0x79ce",
+  "code_used": 14798,
   "ram_start": "0xc000",
-  "static_ram_bytes": 6510,
-  "ram_end": "0xd96e",
+  "static_ram_bytes": 6533,
+  "ram_end": "0xd985",
   "required_main_ram_bytes": 32768,
   "required_vram_bytes": 16384,
   "viewport_blocks": [
@@ -46,6 +46,10 @@
     8
   ],
   "music_loop_actions": 64,
-  "sha256": "70d11bd54e1f952398cfc932f796668d0343c5a9899e066e5b0c7cc0d693d11a",
+  "difficulty_floors": {
+    "EASY": 15,
+    "NORMAL": 30
+  },
+  "sha256": "91844ca8cc107fcee1d1e03921e60d80e4fa8d44c045541328b75ed75f3fb530",
   "physical_hardware_tested": false
 }

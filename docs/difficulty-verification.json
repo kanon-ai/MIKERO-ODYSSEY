@@ -1,0 +1,326 @@
+{
+  "rom_sha256": "b2a2ea2e5d27a7703c44cbd103c15a45cd77dc57a34b79060b25fae2d0dde30a",
+  "checks": [
+    {
+      "name": "ntsc-easy-default",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-start",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-supplies",
+      "passed": true,
+      "counts": {
+        "3": 6,
+        "5": 3,
+        "6": 15,
+        "7": 1
+      }
+    },
+    {
+      "name": "ntsc-easy-keeper-full-heal",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-keeper-reusable",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-level-full-heal",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-final-floor",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-final-boss",
+      "passed": true
+    },
+    {
+      "name": "ntsc-ending-before-results",
+      "passed": true
+    },
+    {
+      "name": "ntsc-ending-title-face-planes",
+      "passed": true
+    },
+    {
+      "name": "ntsc-ending-title-face-patterns",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-gate-closed",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-result-labels",
+      "passed": true
+    },
+    {
+      "name": "ntsc-X-title",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-selection",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-start",
+      "passed": true
+    },
+    {
+      "name": "ntsc-separate-records",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-supplies",
+      "passed": true,
+      "counts": {
+        "3": 4,
+        "5": 1,
+        "6": 3,
+        "7": 1
+      }
+    },
+    {
+      "name": "ntsc-normal-keeper-limited-heal",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-keeper-once",
+      "passed": true
+    },
+    {
+      "name": "ntsc-full-pack-preserves-potion",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-potion-12",
+      "passed": true
+    },
+    {
+      "name": "ntsc-left-potion-recoverable",
+      "passed": true
+    },
+    {
+      "name": "ntsc-full-pack-chest-leaves-potion",
+      "passed": true
+    },
+    {
+      "name": "ntsc-no-repeat-chest-score",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-level-partial-heal",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-final-floor",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-boss-endurance",
+      "passed": true
+    },
+    {
+      "name": "ntsc-boss-telegraph",
+      "passed": true
+    },
+    {
+      "name": "ntsc-boss-dodge",
+      "passed": true
+    },
+    {
+      "name": "ntsc-boss-footwork",
+      "passed": true
+    },
+    {
+      "name": "ntsc-boss-ignoring-warning-costs-10",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-gate-closed",
+      "passed": true
+    },
+    {
+      "name": "ntsc-normal-result-labels",
+      "passed": true
+    },
+    {
+      "name": "ntsc-easy-record-retained",
+      "passed": true
+    },
+    {
+      "name": "ntsc-idle-stops-world-and-music",
+      "passed": true
+    },
+    {
+      "name": "ntsc-strict-VRAM",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-default",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-start",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-supplies",
+      "passed": true,
+      "counts": {
+        "3": 6,
+        "5": 3,
+        "6": 15,
+        "7": 1
+      }
+    },
+    {
+      "name": "pal-easy-keeper-full-heal",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-keeper-reusable",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-level-full-heal",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-final-floor",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-final-boss",
+      "passed": true
+    },
+    {
+      "name": "pal-ending-before-results",
+      "passed": true
+    },
+    {
+      "name": "pal-ending-title-face-planes",
+      "passed": true
+    },
+    {
+      "name": "pal-ending-title-face-patterns",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-gate-closed",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-result-labels",
+      "passed": true
+    },
+    {
+      "name": "pal-X-title",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-selection",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-start",
+      "passed": true
+    },
+    {
+      "name": "pal-separate-records",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-supplies",
+      "passed": true,
+      "counts": {
+        "3": 4,
+        "5": 1,
+        "6": 3,
+        "7": 1
+      }
+    },
+    {
+      "name": "pal-normal-keeper-limited-heal",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-keeper-once",
+      "passed": true
+    },
+    {
+      "name": "pal-full-pack-preserves-potion",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-potion-12",
+      "passed": true
+    },
+    {
+      "name": "pal-left-potion-recoverable",
+      "passed": true
+    },
+    {
+      "name": "pal-full-pack-chest-leaves-potion",
+      "passed": true
+    },
+    {
+      "name": "pal-no-repeat-chest-score",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-level-partial-heal",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-final-floor",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-boss-endurance",
+      "passed": true
+    },
+    {
+      "name": "pal-boss-telegraph",
+      "passed": true
+    },
+    {
+      "name": "pal-boss-dodge",
+      "passed": true
+    },
+    {
+      "name": "pal-boss-footwork",
+      "passed": true
+    },
+    {
+      "name": "pal-boss-ignoring-warning-costs-10",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-gate-closed",
+      "passed": true
+    },
+    {
+      "name": "pal-normal-result-labels",
+      "passed": true
+    },
+    {
+      "name": "pal-easy-record-retained",
+      "passed": true
+    },
+    {
+      "name": "pal-idle-stops-world-and-music",
+      "passed": true
+    },
+    {
+      "name": "pal-strict-VRAM",
+      "passed": true
+    }
+  ],
+  "method": "Controlled RAM scenes with real keyboard input, NTSC/PAL MSX1 RAM32K VRAM16K; screenshots from native emulator."
+}

@@ -1,0 +1,967 @@
+{
+  "rom_sha256": "b2a2ea2e5d27a7703c44cbd103c15a45cd77dc57a34b79060b25fae2d0dde30a",
+  "checks": [
+    {
+      "name": "mode0-variant0-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant1-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant2-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant3-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant4-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant5-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant6-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant7-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant8-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant9-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant10-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant11-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant12-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant13-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant14-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant15-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant16-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant17-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant18-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant19-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant20-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant21-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant22-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant23-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant24-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant25-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant26-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant27-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant28-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant29-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant30-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant31-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant32-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant33-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant34-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant35-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant36-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant37-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant38-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant39-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant40-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant41-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant42-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant43-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant44-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant45-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant46-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant47-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant48-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant49-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant50-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant51-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant52-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant53-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant54-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant55-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant56-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant57-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant58-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant59-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant60-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant61-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant62-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant63-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant64-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant65-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant66-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant67-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant68-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant69-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant70-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant71-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant72-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant73-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant74-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant75-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant76-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant77-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant78-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant79-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant80-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant81-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant82-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant83-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant84-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant85-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant86-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant87-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant88-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant89-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant90-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant91-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant92-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant93-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant94-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant95-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant96-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant97-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant98-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant99-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant100-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant101-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant102-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant103-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant104-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant105-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant106-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant107-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant108-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant109-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant110-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant111-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant112-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant113-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant114-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant115-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant116-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant117-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant118-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode0-variant119-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant0-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant1-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant2-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant3-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant4-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant5-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant6-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant7-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant8-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant9-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant10-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant11-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant12-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant13-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant14-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant15-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant16-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant17-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant18-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant19-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant20-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant21-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant22-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant23-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant24-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant25-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant26-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant27-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant28-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant29-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant30-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant31-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant32-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant33-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant34-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant35-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant36-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant37-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant38-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant39-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant40-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant41-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant42-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant43-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant44-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant45-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant46-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant47-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant48-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant49-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant50-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant51-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant52-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant53-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant54-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant55-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant56-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant57-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant58-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant59-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant60-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant61-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant62-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant63-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant64-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant65-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant66-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant67-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant68-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant69-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant70-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant71-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant72-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant73-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant74-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant75-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant76-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant77-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant78-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant79-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant80-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant81-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant82-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant83-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant84-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant85-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant86-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant87-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant88-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant89-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant90-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant91-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant92-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant93-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant94-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant95-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant96-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant97-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant98-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant99-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant100-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant101-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant102-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant103-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant104-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant105-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant106-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant107-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant108-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant109-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant110-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant111-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant112-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant113-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant114-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant115-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant116-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant117-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant118-supplies-and-terrain",
+      "passed": true
+    },
+    {
+      "name": "mode1-variant119-supplies-and-terrain",
+      "passed": true
+    }
+  ],
+  "music_code_and_tables_unchanged": true,
+  "strict_VRAM_violations": 0
+}

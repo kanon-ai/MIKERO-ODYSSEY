@@ -5,6 +5,8 @@
 .globl _anim_ptr,_anim_target,_anim_size,_anim_banks,_anim_item,_anim_sat
 .globl _mode,_hit_x,_hit_y,_music_age,_music_pos,_music_frag,_music_volume,_music_period,_sound_left
 .globl _music_step,_music_reset,_beep,_sfx_kind,_sfx_next,_psg_mix
+.globl _frame_tick,_gate_patterns,_gate_colors
+.globl _anim_gap
 .area _CODE
 _install_animation::
  di
@@ -35,6 +37,8 @@ _anim_isr::
  push ix
  push iy
  call _old_hook
+ ld hl,#_frame_tick
+ inc (hl)
  ld a,(_anim_div)
  inc a
  ld (_anim_div),a
@@ -110,10 +114,16 @@ environment:
  ld d,a
  ld e,#0
  add hl,de
- ld de,#0x0400
- ld a,#64
+ ; The black floor is static. Rewrite only the wall's pattern/color bytes.
+ ld de,#32
+ add hl,de
+ ld de,#0x0420
+ ld a,#32
  ld (_anim_size),a
+ ld (_anim_gap),a
  call anim_copy_three
+ xor a
+ ld (_anim_gap),a
 enemies:
  ld a,(_anim_clock)
  and #3
@@ -216,6 +226,10 @@ copy_loop:
  ld a,(_anim_size)
  ld b,a
  call anim_upload
+ ld a,(_anim_gap)
+ ld e,a
+ ld d,#0
+ add hl,de
  ld de,(_anim_target)
  ld a,d
  add a,#0x20
@@ -1088,3 +1102,126 @@ view_ray_133:
 .db 255
 view_ray_134:
 .db 255
+; Native name-table renderer. Same rays and explored bits as the C renderer.
+; Bounds are checked before map reads; IX/IY hold output streams.
+.globl _render_view,_render_x,_render_y,_render_cell,_render_cols,_render_rows,_render_map
+.globl _map,_seen,_sight,_screen,_px,_py
+_render_view::
+ push ix
+ push iy
+ ld ix,#_screen+97
+ ld iy,#_sight
+ ld hl,(_view_origin)
+ ld de,#-263
+ add hl,de
+ ld (_render_map),hl
+ ld a,(_py)
+ sub #4
+ ld (_render_y),a
+ xor a
+ ld (_render_cell),a
+ ld a,#9
+ ld (_render_rows),a
+render_row:
+ ld a,(_px)
+ sub #7
+ ld (_render_x),a
+ ld a,#15
+ ld (_render_cols),a
+render_cell_loop:
+ ld 0(iy),#0
+ ld a,(_render_y)
+ cp #64
+ jr nc,render_dark
+ ld a,(_render_x)
+ cp #64
+ jr nc,render_dark
+ ld a,(_render_cell)
+ call _view_visible
+ or a
+ jr z,render_hidden
+ call render_seen_address
+ ld a,(hl)
+ or c
+ ld (hl),a
+ ld 0(iy),#1
+ ld hl,(_render_map)
+ ld a,(hl)
+ jr render_store
+render_hidden:
+ call render_seen_address
+ ld a,(hl)
+ and c
+ jr z,render_dark
+ ld hl,(_render_map)
+ ld a,(hl)
+ cp #1
+ ld a,#17
+ jr z,render_store
+ inc a
+ jr render_store
+render_dark:
+ ld a,#16
+render_store:
+ add a,a
+ add a,a
+ add a,#128
+ ld 0(ix),a
+ inc a
+ ld 1(ix),a
+ inc a
+ ld 32(ix),a
+ inc a
+ ld 33(ix),a
+ inc ix
+ inc ix
+ inc iy
+ ld hl,(_render_map)
+ inc hl
+ ld (_render_map),hl
+ ld hl,#_render_x
+ inc (hl)
+ ld hl,#_render_cell
+ inc (hl)
+ ld hl,#_render_cols
+ dec (hl)
+ jp nz,render_cell_loop
+ ld de,#34
+ add ix,de
+ ld hl,(_render_map)
+ ld de,#49
+ add hl,de
+ ld (_render_map),hl
+ ld hl,#_render_y
+ inc (hl)
+ ld hl,#_render_rows
+ dec (hl)
+ jp nz,render_row
+ pop iy
+ pop ix
+ ret
+render_seen_address:
+ ld hl,(_render_map)
+ ld de,#_map
+ or a
+ sbc hl,de
+ ld a,l
+ and #7
+ ld e,a
+ ld d,#0
+ push hl
+ ld hl,#render_bits
+ add hl,de
+ ld c,(hl)
+ pop hl
+ srl h
+ rr l
+ srl h
+ rr l
+ srl h
+ rr l
+ ld de,#_seen
+ add hl,de
+ ret
+render_bits:
+.db 1,2,4,8,16,32,64,128
