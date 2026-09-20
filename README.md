@@ -1,8 +1,8 @@
 # MIKERO-ODYSSEY — 難易度テスト版
 
-v1.7-difficulty-test（ローカル試遊版）。基準版を置き換えず、ショップ・探索スコア・HARDの鍵ルールを試す派生版です。
+v1.7-difficulty-test（難易度調整の試遊版）。基準版を置き換えず、ショップ・探索スコア・HARDの鍵ルールを試す派生版です。
 
-[公開基準版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
+[難易度テスト版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7-difficulty-test) · [公開基準版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
 
 猫のミケロが、迷宮に迷い込んだ生物を肉球で元の世界へ送り返し、異世界の門を閉じる冒険です。
 初代MSX、512KB ASCII16 ROM、メインRAM32KB、VRAM16KB。原因不明の門、ウサギのKeeper、担架の救出演出はそのままです。
