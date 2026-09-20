@@ -1,0 +1,190 @@
+{
+  "rom_sha256": "1f74dfb5d7b340c615831b246809524525091555e001e4d7f3f442b9435cf56f",
+  "checks": [
+    {
+      "name": "ntsc-menu-16-2",
+      "passed": true
+    },
+    {
+      "name": "ntsc-menu-128-0",
+      "passed": true
+    },
+    {
+      "name": "ntsc-menu-128-1",
+      "passed": true
+    },
+    {
+      "name": "ntsc-menu-128-2",
+      "passed": true
+    },
+    {
+      "name": "ntsc-menu-128-0",
+      "passed": true
+    },
+    {
+      "name": "ntsc-menu-16-2",
+      "passed": true
+    },
+    {
+      "name": "ntsc-hard-normal-start",
+      "passed": true
+    },
+    {
+      "name": "ntsc-one-key",
+      "passed": true
+    },
+    {
+      "name": "ntsc-locked-stairs-cost-normal-turn",
+      "passed": true
+    },
+    {
+      "name": "ntsc-automatic-key-pickup",
+      "passed": true
+    },
+    {
+      "name": "ntsc-key-hud",
+      "passed": true
+    },
+    {
+      "name": "ntsc-key-used-new-floor",
+      "passed": true
+    },
+    {
+      "name": "ntsc-final-gate-locked",
+      "passed": true
+    },
+    {
+      "name": "ntsc-key-does-not-bypass-king",
+      "passed": true
+    },
+    {
+      "name": "ntsc-key-and-king-allow-ending",
+      "passed": true
+    },
+    {
+      "name": "ntsc-record-0",
+      "passed": true
+    },
+    {
+      "name": "ntsc-record-retry-0",
+      "passed": true
+    },
+    {
+      "name": "ntsc-record-1",
+      "passed": true
+    },
+    {
+      "name": "ntsc-record-retry-1",
+      "passed": true
+    },
+    {
+      "name": "ntsc-record-2",
+      "passed": true
+    },
+    {
+      "name": "ntsc-record-retry-2",
+      "passed": true
+    },
+    {
+      "name": "ntsc-separate-records",
+      "passed": true
+    },
+    {
+      "name": "ntsc-vram",
+      "passed": true
+    },
+    {
+      "name": "pal-menu-16-2",
+      "passed": true
+    },
+    {
+      "name": "pal-menu-128-0",
+      "passed": true
+    },
+    {
+      "name": "pal-menu-128-1",
+      "passed": true
+    },
+    {
+      "name": "pal-menu-128-2",
+      "passed": true
+    },
+    {
+      "name": "pal-menu-128-0",
+      "passed": true
+    },
+    {
+      "name": "pal-menu-16-2",
+      "passed": true
+    },
+    {
+      "name": "pal-hard-normal-start",
+      "passed": true
+    },
+    {
+      "name": "pal-one-key",
+      "passed": true
+    },
+    {
+      "name": "pal-locked-stairs-cost-normal-turn",
+      "passed": true
+    },
+    {
+      "name": "pal-automatic-key-pickup",
+      "passed": true
+    },
+    {
+      "name": "pal-key-hud",
+      "passed": true
+    },
+    {
+      "name": "pal-key-used-new-floor",
+      "passed": true
+    },
+    {
+      "name": "pal-final-gate-locked",
+      "passed": true
+    },
+    {
+      "name": "pal-key-does-not-bypass-king",
+      "passed": true
+    },
+    {
+      "name": "pal-key-and-king-allow-ending",
+      "passed": true
+    },
+    {
+      "name": "pal-record-0",
+      "passed": true
+    },
+    {
+      "name": "pal-record-retry-0",
+      "passed": true
+    },
+    {
+      "name": "pal-record-1",
+      "passed": true
+    },
+    {
+      "name": "pal-record-retry-1",
+      "passed": true
+    },
+    {
+      "name": "pal-record-2",
+      "passed": true
+    },
+    {
+      "name": "pal-record-retry-2",
+      "passed": true
+    },
+    {
+      "name": "pal-separate-records",
+      "passed": true
+    },
+    {
+      "name": "pal-vram",
+      "passed": true
+    }
+  ],
+  "method": "NTSC/PAL native execution, controlled fixtures and real input; no physical hardware claim."
+}

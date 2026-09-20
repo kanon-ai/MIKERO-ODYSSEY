@@ -1,0 +1,342 @@
+{
+  "rom_sha256": "0dc8bf46c7786db55f1140ee83371be8306b0fb353276e7d580481746d57df8d",
+  "difficulty": "NORMAL",
+  "seed_wait": 0,
+  "policy": "prepared",
+  "input_only": true,
+  "gameplay_ram_writes": 0,
+  "planner_observes_full_map": true,
+  "actions": 4715,
+  "heals": 64,
+  "boss_retreats": 5,
+  "shop_purchases": 12,
+  "initiative_waits": 139,
+  "history": [
+    {
+      "depth": 1,
+      "hp": 24,
+      "maxhp": 24,
+      "potions": 2,
+      "level": 1,
+      "food": 300,
+      "score": 0,
+      "action": 0
+    },
+    {
+      "depth": 2,
+      "hp": 24,
+      "maxhp": 26,
+      "potions": 5,
+      "level": 2,
+      "food": 273,
+      "score": 591,
+      "action": 128
+    },
+    {
+      "depth": 3,
+      "hp": 27,
+      "maxhp": 28,
+      "potions": 4,
+      "level": 3,
+      "food": 333,
+      "score": 1279,
+      "action": 270
+    },
+    {
+      "depth": 4,
+      "hp": 23,
+      "maxhp": 30,
+      "potions": 5,
+      "level": 4,
+      "food": 404,
+      "score": 1999,
+      "action": 401
+    },
+    {
+      "depth": 5,
+      "hp": 28,
+      "maxhp": 30,
+      "potions": 5,
+      "level": 4,
+      "food": 626,
+      "score": 2748,
+      "action": 581
+    },
+    {
+      "depth": 6,
+      "hp": 27,
+      "maxhp": 32,
+      "potions": 5,
+      "level": 5,
+      "food": 511,
+      "score": 3387,
+      "action": 697
+    },
+    {
+      "depth": 7,
+      "hp": 31,
+      "maxhp": 34,
+      "potions": 3,
+      "level": 6,
+      "food": 476,
+      "score": 4078,
+      "action": 833
+    },
+    {
+      "depth": 8,
+      "hp": 30,
+      "maxhp": 34,
+      "potions": 4,
+      "level": 6,
+      "food": 403,
+      "score": 4889,
+      "action": 1007
+    },
+    {
+      "depth": 9,
+      "hp": 26,
+      "maxhp": 36,
+      "potions": 5,
+      "level": 7,
+      "food": 473,
+      "score": 5505,
+      "action": 1139
+    },
+    {
+      "depth": 10,
+      "hp": 33,
+      "maxhp": 36,
+      "potions": 3,
+      "level": 7,
+      "food": 443,
+      "score": 6089,
+      "action": 1270
+    },
+    {
+      "depth": 11,
+      "hp": 32,
+      "maxhp": 38,
+      "potions": 5,
+      "level": 8,
+      "food": 410,
+      "score": 6865,
+      "action": 1404
+    },
+    {
+      "depth": 12,
+      "hp": 32,
+      "maxhp": 38,
+      "potions": 4,
+      "level": 8,
+      "food": 567,
+      "score": 7602,
+      "action": 1549
+    },
+    {
+      "depth": 13,
+      "hp": 37,
+      "maxhp": 40,
+      "potions": 3,
+      "level": 9,
+      "food": 541,
+      "score": 8338,
+      "action": 1676
+    },
+    {
+      "depth": 14,
+      "hp": 35,
+      "maxhp": 40,
+      "potions": 3,
+      "level": 9,
+      "food": 424,
+      "score": 8902,
+      "action": 1794
+    },
+    {
+      "depth": 15,
+      "hp": 38,
+      "maxhp": 42,
+      "potions": 3,
+      "level": 10,
+      "food": 487,
+      "score": 9655,
+      "action": 1932
+    },
+    {
+      "depth": 16,
+      "hp": 32,
+      "maxhp": 42,
+      "potions": 4,
+      "level": 10,
+      "food": 458,
+      "score": 10246,
+      "action": 2062
+    },
+    {
+      "depth": 17,
+      "hp": 36,
+      "maxhp": 42,
+      "potions": 2,
+      "level": 10,
+      "food": 420,
+      "score": 11029,
+      "action": 2201
+    },
+    {
+      "depth": 18,
+      "hp": 33,
+      "maxhp": 44,
+      "potions": 2,
+      "level": 11,
+      "food": 419,
+      "score": 12021,
+      "action": 2403
+    },
+    {
+      "depth": 19,
+      "hp": 41,
+      "maxhp": 46,
+      "potions": 2,
+      "level": 12,
+      "food": 313,
+      "score": 12967,
+      "action": 2610
+    },
+    {
+      "depth": 20,
+      "hp": 35,
+      "maxhp": 46,
+      "potions": 2,
+      "level": 12,
+      "food": 374,
+      "score": 13768,
+      "action": 2751
+    },
+    {
+      "depth": 21,
+      "hp": 39,
+      "maxhp": 46,
+      "potions": 1,
+      "level": 12,
+      "food": 497,
+      "score": 14573,
+      "action": 2930
+    },
+    {
+      "depth": 22,
+      "hp": 39,
+      "maxhp": 48,
+      "potions": 0,
+      "level": 13,
+      "food": 414,
+      "score": 15407,
+      "action": 3114
+    },
+    {
+      "depth": 23,
+      "hp": 37,
+      "maxhp": 48,
+      "potions": 2,
+      "level": 13,
+      "food": 332,
+      "score": 16117,
+      "action": 3297
+    },
+    {
+      "depth": 24,
+      "hp": 42,
+      "maxhp": 50,
+      "potions": 2,
+      "level": 14,
+      "food": 369,
+      "score": 16928,
+      "action": 3462
+    },
+    {
+      "depth": 25,
+      "hp": 46,
+      "maxhp": 50,
+      "potions": 2,
+      "level": 14,
+      "food": 368,
+      "score": 17594,
+      "action": 3665
+    },
+    {
+      "depth": 26,
+      "hp": 42,
+      "maxhp": 50,
+      "potions": 2,
+      "level": 14,
+      "food": 640,
+      "score": 18187,
+      "action": 3795
+    },
+    {
+      "depth": 27,
+      "hp": 42,
+      "maxhp": 50,
+      "potions": 2,
+      "level": 14,
+      "food": 528,
+      "score": 18796,
+      "action": 3908
+    },
+    {
+      "depth": 28,
+      "hp": 43,
+      "maxhp": 52,
+      "potions": 2,
+      "level": 15,
+      "food": 382,
+      "score": 19491,
+      "action": 4055
+    },
+    {
+      "depth": 29,
+      "hp": 36,
+      "maxhp": 52,
+      "potions": 0,
+      "level": 15,
+      "food": 393,
+      "score": 20209,
+      "action": 4246
+    },
+    {
+      "depth": 30,
+      "hp": 42,
+      "maxhp": 52,
+      "potions": 0,
+      "level": 15,
+      "food": 459,
+      "score": 21200,
+      "action": 4483
+    }
+  ],
+  "final": {
+    "mode": 3,
+    "depth": 30,
+    "px": 55,
+    "py": 55,
+    "hp": 49,
+    "maxhp": 52,
+    "level": 15,
+    "xp": 32,
+    "attack": 17,
+    "potions": 0,
+    "gold": 250,
+    "enemy_count": 19,
+    "keeper_used": 0,
+    "boss_charge": 0,
+    "dirty": 0,
+    "ending_pending": 0,
+    "food": 429,
+    "score": 24990,
+    "turn_count": 4671,
+    "screen_count": 8789,
+    "explored": 3740
+  },
+  "cleared": true,
+  "strict_VRAM_violations": 0,
+  "wall_seconds": 399.1386066999985
+}

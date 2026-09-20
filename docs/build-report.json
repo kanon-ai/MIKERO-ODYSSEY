@@ -6,7 +6,7 @@
     64
   ],
   "maps_sha256": "378738b2c0612c947c6edd65e18ba7f5511f1d5c19e36479a2b8b63e17e6dec7",
-  "graphics_sha256": "b8ab37cd650406d593934ede6237f8a24c7e4406945e53e9e2a6bedde7ec68f5",
+  "graphics_sha256": "deb8b77bb37c2d0d761e5caf1b3e49be4b42a25204cfd6779e4dab51a003af27",
   "themes": [
     "MOSS LANTERNS",
     "CANDY SPORES",
@@ -29,11 +29,11 @@
   },
   "rom_bytes": 524288,
   "mapper": "ASCII16",
-  "code_end": "0x79ce",
-  "code_used": 14798,
+  "code_end": "0x7d96",
+  "code_used": 15766,
   "ram_start": "0xc000",
-  "static_ram_bytes": 6533,
-  "ram_end": "0xd985",
+  "static_ram_bytes": 7051,
+  "ram_end": "0xdb8b",
   "required_main_ram_bytes": 32768,
   "required_vram_bytes": 16384,
   "viewport_blocks": [
@@ -48,8 +48,16 @@
   "music_loop_actions": 64,
   "difficulty_floors": {
     "EASY": 15,
-    "NORMAL": 30
+    "NORMAL": 30,
+    "HARD": 30
   },
-  "sha256": "91844ca8cc107fcee1d1e03921e60d80e4fa8d44c045541328b75ed75f3fb530",
+  "hard_requires_floor_key": true,
+  "shop": {
+    "price_gold": 25,
+    "food": 100,
+    "stock_per_floor": 1
+  },
+  "exploration_score_per_new_cell": 1,
+  "sha256": "1f74dfb5d7b340c615831b246809524525091555e001e4d7f3f442b9435cf56f",
   "physical_hardware_tested": false
 }

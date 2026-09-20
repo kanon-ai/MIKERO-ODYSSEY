@@ -6,7 +6,8 @@ R=Path(__file__).resolve().parents[2];O=R/'outputs';S=json.loads((R/'work/build/
 difficulty=int(sys.argv[1]) if len(sys.argv)>1 else 0
 seed=int(sys.argv[2]) if len(sys.argv)>2 else 0
 policy=sys.argv[3] if len(sys.argv)>3 else 'balanced'
-label=f'{"normal" if difficulty else "easy"}-{seed}-{policy}'
+label=f'{("easy","normal","hard")[difficulty]}-{seed}-{policy}'
+stop_floor=int(sys.argv[4]) if len(sys.argv)>4 else 0
 ROM=O/'MIKERO-ODYSSEY.rom';history=[];began=time.monotonic();actions=0
 def path(s,target):
  start=s['py']*64+s['px'];heap=[(0,start)];cost={start:0};prev={};occupied={p['y']*64+p['x'] for p in s['enemies']}
@@ -18,17 +19,17 @@ def path(s,target):
    while p!=start:route.append(p);p=prev[p]
    return route[::-1],c
   for n in (p-64,p+64,p-1,p+1):
-   if not 0<=n<4096 or s['map'][n] in (1,7):continue
+   if not 0<=n<4096 or s['map'][n] in (1,7,29,30):continue
    nc=c+1+(8 if s['map'][n]==8 else 0)+(5 if n in occupied and policy!='rush' else 0)
    if nc<cost.get(n,99999):cost[n]=nc;prev[n]=p;heapq.heappush(heap,(nc,n))
  return [],99999
 with OpenMSX('ntsc',work=R/'work') as e:
  e.load_rom(ROM,'ASCII16');e.run_for(4+seed*.137)
  def snap():
-  raw=e.read_block('memory',0xc000,0x1a00)
+  raw=e.read_block('memory',0xc000,0x1c00)
   def get(n,z=1):return int.from_bytes(raw[S[n]-0xc000:S[n]-0xc000+z],'little')
-  s={n:get(n) for n in ('mode','depth','px','py','hp','maxhp','level','xp','attack','potions','gold','enemy_count','keeper_used','boss_charge','dirty','ending_pending')}
-  s.update({n:get(n,2) for n in ('food','score','turn_count','screen_count')})
+  s={n:get(n) for n in ('mode','depth','px','py','hp','maxhp','level','xp','attack','potions','gold','enemy_count','keeper_used','boss_charge','dirty','ending_pending','has_key')}
+  s.update({n:get(n,2) for n in ('food','score','turn_count','screen_count','explored')})
   s['map']=raw[:4096];s['enemies']=[dict(x=get('ex') if False else raw[S['ex']-0xc000+i],y=raw[S['ey']-0xc000+i],hp=raw[S['eh']-0xc000+i],type=raw[S['et']-0xc000+i]) for i in range(s['enemy_count']) if raw[S['eh']-0xc000+i]]
   return s
  def tap(mask,row=8):
@@ -40,14 +41,15 @@ with OpenMSX('ntsc',work=R/'work') as e:
     if not snap()['dirty']:break
     e.run_for(.05)
  def move(s,n):tap({-64:32,64:64,-1:16,1:128}[n-s['py']*64-s['px']])
- if difficulty:tap(128)
- tap(1);e.run_for(1.5);last_floor=0;heals=0;retreats=0;wait_spot=None;approach_waits=0;initiative_waits=0
+ for _ in range(difficulty):tap(128)
+ tap(1);e.run_for(1.5);last_floor=0;heals=0;retreats=0;wait_spot=None;approach_waits=0;initiative_waits=0;shop_buys=0
  for actions in range(12000):
   s=snap();here=s['py']*64+s['px'];m=s['map']
   if here!=wait_spot:wait_spot=here;approach_waits=0
   if s['depth']!=last_floor:
    last_floor=s['depth'];entry={k:s[k] for k in ('depth','hp','maxhp','potions','level','food','score')};entry['action']=actions;history.append(entry);print(label,'FLOOR',entry,flush=True)
   if s['mode']!=1:break
+  if stop_floor and s['depth']>=stop_floor:break
   adjacent=[a for a in s['enemies'] if abs(a['x']-s['px'])+abs(a['y']-s['py'])==1]
   boss=next((a for a in s['enemies'] if a['type']==15),None)
   occupied={a['y']*64+a['x'] for a in s['enemies']}
@@ -72,6 +74,9 @@ with OpenMSX('ntsc',work=R/'work') as e:
     keeper=7*64+8
     if abs(s['px']-8)+abs(s['py']-7)==1:move(s,keeper);continue
     neighbors=[keeper-64,keeper+64,keeper-1,keeper+1];target=min(neighbors,key=lambda p:path(s,p)[1])
+   elif policy=='prepared' and m[200]==29 and s['gold']>=25 and s['food']<400 and s['px']<12 and s['py']<12:
+    if abs(s['px']-8)+abs(s['py']-3)==1:move(s,200);shop_buys+=1;continue
+    target=min([136,264,199,201],key=lambda p:path(s,p)[1])
    elif m[199]==5:target=199
    elif policy=='prepared' and s['food']<500 and s['px']<12 and s['py']<12 and m[451]==6:target=451
    else:
@@ -81,6 +86,7 @@ with OpenMSX('ntsc',work=R/'work') as e:
      if choices:
       candidate=min(choices,key=lambda p:path(s,p)[1])
       if policy not in ('route','safe_route','tactical','prepared') or path(s,candidate)[1]<=(80 if wanted==6 else 40):target=candidate
+  if target==55*64+55 and difficulty==2 and not s['has_key']:target=m.index(31)
   if boss and abs(s['px']-boss['x'])+abs(s['py']-boss['y'])<=7:
    if difficulty and policy!='rush' and abs(s['px']-boss['x'])+abs(s['py']-boss['y'])==2:tap(1);continue
    target=boss['y']*64+boss['x']
@@ -99,7 +105,7 @@ with OpenMSX('ntsc',work=R/'work') as e:
    move(s,options[0])
   if actions%300==0:print(label,'action',actions,'HP',s['hp'],'POT',s['potions'],flush=True)
  e.run_for(3);s=snap()
- report=dict(rom_sha256=hashlib.sha256(ROM.read_bytes()).hexdigest(),difficulty='NORMAL' if difficulty else 'EASY',seed_wait=seed,policy=policy,input_only=True,gameplay_ram_writes=0,planner_observes_full_map=True,actions=actions+1,heals=heals,boss_retreats=retreats,initiative_waits=initiative_waits,history=history,final={k:v for k,v in s.items() if k not in ('map','enemies')},cleared=s['mode']==3 and s['depth']==(30 if difficulty else 15) and not s['ending_pending'],strict_VRAM_violations=e.timing_violations(),wall_seconds=time.monotonic()-began)
+ report=dict(rom_sha256=hashlib.sha256(ROM.read_bytes()).hexdigest(),difficulty=('EASY','NORMAL','HARD')[difficulty],pilot_stop_floor=stop_floor,seed_wait=seed,policy=policy,input_only=True,gameplay_ram_writes=0,planner_observes_full_map=True,actions=actions+1,heals=heals,boss_retreats=retreats,shop_purchases=shop_buys,initiative_waits=initiative_waits,history=history,final={k:v for k,v in s.items() if k not in ('map','enemies')},cleared=s['mode']==3 and s['depth']==(30 if difficulty else 15) and not s['ending_pending'],strict_VRAM_violations=e.timing_violations(),wall_seconds=time.monotonic()-began)
  (O/f'campaign-{label}.json').write_text(json.dumps(report,indent=2))
  print(json.dumps({k:v for k,v in report.items() if k!='history'},indent=2),flush=True)
  assert e.timing_violations()==0

@@ -1,9 +1,9 @@
 {
-  "rom_sha256": "91844ca8cc107fcee1d1e03921e60d80e4fa8d44c045541328b75ed75f3fb530",
+  "rom_sha256": "1f74dfb5d7b340c615831b246809524525091555e001e4d7f3f442b9435cf56f",
   "source_frames": 866,
-  "gif_frames": 317,
+  "gif_frames": 318,
   "duration_ms": 14450,
-  "emulated_duration_ms": 14451.942915824291,
+  "emulated_duration_ms": 14451.940958007735,
   "speed_multiplier": 1,
   "gameplay_ram_writes": 0,
   "strict_VRAM_violations": 0,
@@ -19,7 +19,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 8,
-      "score": 20
+      "score": 27
     },
     {
       "row": 8,
@@ -31,7 +31,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 8,
-      "score": 20
+      "score": 27
     },
     {
       "row": 8,
@@ -43,7 +43,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 16,
-      "score": 20
+      "score": 28
     },
     {
       "row": 8,
@@ -55,7 +55,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 20,
-      "score": 20
+      "score": 32
     },
     {
       "row": 8,
@@ -67,7 +67,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 25,
-      "score": 20
+      "score": 37
     },
     {
       "row": 5,
@@ -79,7 +79,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 25,
-      "score": 20
+      "score": 37
     },
     {
       "row": 8,
@@ -91,7 +91,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 33,
-      "score": 20
+      "score": 44
     },
     {
       "row": 8,
@@ -103,7 +103,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 41,
-      "score": 20
+      "score": 52
     },
     {
       "row": 8,
@@ -115,7 +115,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 49,
-      "score": 20
+      "score": 60
     },
     {
       "row": 8,
@@ -127,7 +127,7 @@
       "depth": 1,
       "mode": 1,
       "turn_count": 57,
-      "score": 20
+      "score": 62
     }
   ]
 }

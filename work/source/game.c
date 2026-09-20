@@ -27,6 +27,9 @@ typedef signed int i16;
 #define OLDFLOOR 18
 #define SPARK 19
 #define GEM 20
+#define SHOP 29
+#define SOLDOUT 30
+#define KEY 31
 #define MAXEN 20
 u8 map[4096],seen[512],screen[768],sight[135];
 u8 scroll_screen[768],scroll_under[4];
@@ -67,8 +70,11 @@ u16 score,high_score,music_period;
 u8 record_floor,music_pos,music_age,music_volume;
 u8 rescue_pending,rescue_phase;
 u8 difficulty,depth_max,potion_limit,keeper_used,boss_charge,ending_pending,ending_phase,menu_key;
-u16 best_score[2];u8 best_floor[2];
+u16 best_score[3];u8 best_floor[3];
+u8 has_key;
 volatile u8 frame_tick;
+u8 walked[512];
+u16 explored;
 extern const u8 gate_patterns[],gate_colors[];
 u8 goal_x,goal_y,goal_known;
 /* Action-driven fragments of the Nutcracker March, not one note per step.
@@ -283,7 +289,7 @@ void draw(void) {
  if((scroll_dx || scroll_dy) && mode==1){copy_src=screen;copy_dst=scroll_screen;copy_len=768;copy_bytes();}
  clear_screen();
  view_origin=map+index(px,py);
- text(1,0,difficulty?"NORMAL":"EASY");text(10,0,"F");number(11,0,depth,2);text(14,0,"LV");number(16,0,level,2);text(21,0,"G");number(22,0,gold,3);
+ text(1,0,difficulty==2?"HARD":difficulty?"NORMAL":"EASY");if(difficulty==2)text(6,0,has_key?"KEY":"---");text(10,0,"F");number(11,0,depth,2);text(14,0,"LV");number(16,0,level,2);text(21,0,"G");number(22,0,gold,3);
  text(1,1,"HP");number(4,1,hp,2);text(6,1,"/");number(7,1,maxhp,2);text(11,1,"POT");number(15,1,potions,2);text(20,1,"FOOD");number(25,1,food,3);
  if(mode==1)compass();
  for(x=0;x<32;x++){screen[64+x]=94+(x&3);screen[672+x]=94+(x&3);}
@@ -303,8 +309,9 @@ void draw(void) {
   if(mode==3)text(9,8,"GATE CLOSED!");
   text(5,10,"FLOOR");number(12,10,depth,2);text(16,10,"/");number(18,10,depth_max,2);
   text(5,12,"SCORE");number(14,12,score,5);
-  text(5,14,difficulty?"BEST NORMAL":"BEST EASY");number(17,14,high_score,5);
+  text(5,14,difficulty==2?"BEST HARD":difficulty?"BEST NORMAL":"BEST EASY");number(17,14,high_score,5);
   text(5,15,"BEST RUN FLOOR");number(21,15,record_floor,2);
+  text(5,16,"EXPLORED");number(17,16,explored,5);
   text(5,17,"SPACE: TRY AGAIN");
  }
  if((scroll_dx || scroll_dy) && mode==1)half_step();
@@ -388,14 +395,15 @@ void load_floor(void) {
  MEM(0x7000)=2+variant/4;
  vsrc=(const u8*)(0x8000+(u16)(variant&3)*4096);
  for(n=0;n<4096;n++)map[n]=vsrc[n];
- for(n=0;n<512;n++)seen[n]=0;
+ for(n=0;n<512;n++){seen[n]=0;walked[n]=0;}
+ walked[325>>3]=1<<(325&7);
  enemy_count=0;goal_known=0;keeper_used=0;boss_charge=0;
  for(n=0;n<4096;n++) {
   t=map[n];
   /* Keep the opening supplies, spread the rest across each original layout. */
   if(t==POTION && n!=259){if((pc*5+variant)%12>=(difficulty?3:5))map[n]=FLOOR;pc++;}
   if(t==CHEST && n!=199){if(difficulty || (cc*3+variant)%7>=2)map[n]=FLOOR;cc++;}
-  if(difficulty && t==FOOD && n!=451){if((fc*5+variant)%14>=2)map[n]=FLOOR;fc++;}
+  if(difficulty && t==FOOD && n!=451){if((fc*5+variant)%14>=3)map[n]=FLOOR;fc++;}
   if(t==STAIRS || t==CROWN){goal_x=n&63;goal_y=n>>6;goal_known=1;}
   if(t>=32 && t<=36){
    i=enemy_count++;
@@ -407,6 +415,13 @@ void load_floor(void) {
   if(t==CROWN && depth<depth_max)map[n]=STAIRS;
  }
  px=5;py=5;foodclock=0;
+ map[200]=SHOP;
+ has_key=0;
+ if(difficulty==2){
+  n=(u16)variant*31;
+  while(map[n]!=FLOOR || (n&63)<12 || (n>>6)<12 || dist(n&63,goal_x)+dist(n>>6,goal_y)<8)n=(n+1)&4095;
+  map[n]=KEY;
+ }
  if(food<(difficulty?150:250))food=difficulty?150:250;
  graphics();say(theme());sfx(40);
 }
@@ -415,7 +430,7 @@ void new_game(void) {
  depth_max=difficulty?30:15;potion_limit=difficulty?5:9;
  high_score=best_score[difficulty];record_floor=best_floor[difficulty];
  rescue_pending=0;ending_pending=0;ending_phase=0;repeat=0;
- score=0;music_reset();
+ score=0;explored=0;music_reset();
  food=difficulty?300:400;mode=1;turns=0;turn_count=0;kill_count=0;heal_count=0;damage_count=0;
  load_floor();
 }
@@ -445,7 +460,7 @@ void enemy_turn(void) {
   if(dx && (!dy || (random8()&1)))nx+=ex[i]<px?1:-1;
   else if(dy)ny+=ey[i]<py?1:-1;
   n=tile(nx,ny);j=enemy_at(nx,ny);
-  if(n!=WALL && n!=SHRINE && j==255 && (nx!=px || ny!=py)){ex[i]=nx;ey[i]=ny;}
+  if(n!=WALL && n!=SHRINE && n!=SHOP && n!=SOLDOUT && j==255 && (nx!=px || ny!=py)){ex[i]=nx;ey[i]=ny;}
  }
 }
 void tick_turn(void) {
@@ -470,8 +485,16 @@ void fight(u8 i) {
 }
 void move_player(i8 dx,i8 dy) {
  u8 nx=px+dx,ny=py+dy,t=tile(nx,ny),i=enemy_at(nx,ny);
+ u16 step;
  if(t==WALL){say("A WALL BLOCKS THE WAY.");return;}
  if(i!=255){fight(i);return;}
+ if(t==SHOP || t==SOLDOUT){
+  if(t==SOLDOUT)say("SHOP: SOLD OUT. THANK YOU!");
+  else if(gold<25)say("SHOP: FISH 25G / +100 FOOD.");
+  else if(food>899)say("SHOP: YOU HAVE ENOUGH FOOD.");
+  else {gold-=25;food+=100;put(nx,ny,SOLDOUT);say("SHOP: +100 FOOD. THANK YOU!");sfx(55);}
+  return;
+ }
  if(t==SHRINE){
   if(difficulty){
    if(keeper_used)say("KEEPER: NO BANDAGES LEFT.");
@@ -483,11 +506,16 @@ void move_player(i8 dx,i8 dy) {
   else say("KEEPER: FULL HEAL FOR 5 GOLD.");return;
  }
  px=nx;py=ny;scroll_dx=dx;scroll_dy=dy;walk_timer=16;say(theme());
+ step=index(px,py);
+ if(!(walked[step>>3]&(1<<(step&7)))){walked[step>>3]|=1<<(step&7);add_score(1);if(explored<65535)explored++;}
+ if(dist(px,8)+dist(py,3)==1)say(map[200]==SHOP?"SHOP: FISH 25G / +100 FOOD.":"SHOP: SOLD OUT. THANK YOU!");
  if(t==POTION){if(potions<potion_limit){potions++;put(px,py,FLOOR);say("POTION FOUND. Z TO DRINK.");sfx(35);}else say("POT PACK FULL. LEFT HERE.");}
  if(t==GOLD){add_score(25);gold=gold<246?gold+5:250;put(px,py,FLOOR);say("FIVE GOLD PIECES FOUND.");sfx(48);}
  if(t==CHEST){add_score(100);gold=gold<241?gold+10:250;put(px,py,FLOOR);if(potions<potion_limit){potions++;say("CHEST: 10 GOLD AND A POTION!");}else{put(px,py,POTION);say("CHEST: GOLD. POTION LEFT HERE.");}sfx(20);}
  if(t==FOOD){food+=100;if(food>999)food=999;put(px,py,FLOOR);say("FRESH RATIONS. +100 FOOD");sfx(55);}
+ if(t==KEY){has_key=1;put(px,py,FLOOR);say("KEY FOUND! THE WAY IS OPEN.");sfx(48);}
  if(t==TRAP){put(px,py,FLOOR);say("SPIKES! YOU LOSE 3 HEALTH.");hurt(3);}
+ if(difficulty==2 && !has_key && (t==STAIRS || t==CROWN)){say("LOCKED! FIND THE FLOOR KEY.");tick_turn();return;}
  if(t==STAIRS){add_score(200);depth++;load_floor();music_step();return;}
  if(t==CROWN){
   for(i=0;i<enemy_count;i++)if(et[i]==BOSS && eh[i]){say("MEET THE SLIME KING FIRST!");tick_turn();return;}
@@ -509,7 +537,7 @@ void title(void) {
  for(y=8;y<14;y+=2)for(x=3;x<29;x+=2)block(x,y,FLOOR);
  for(x=3;x<29;x+=2){block(x,8,WALL);block(x,14,WALL);}
  block(5,10,SLIME);block(9,12,POTION);block(13,10,HERO);block(17,12,CHEST);block(21,10,KNIGHT);block(25,12,CROWN);
- text(6,17,"SPACE / FIRE TO BEGIN");text(6,19,difficulty?"NORMAL - 30 FLOORS":"EASY   - 15 FLOORS");text(3,20,"LEFT/RIGHT: EASY OR NORMAL");text(4,23,"WALK A LITTLE. FIND A LOT.");present();
+ text(6,17,"SPACE / FIRE TO BEGIN");text(6,19,difficulty==2?"HARD   - 30 FLOORS":difficulty?"NORMAL - 30 FLOORS":"EASY   - 15 FLOORS");text(4,20,"LEFT/RIGHT: SELECT MODE");if(difficulty==2)text(5,21,"FIND A KEY EACH FLOOR");text(4,23,"WALK A LITTLE. FIND A LOT.");present();
 }
 void hardware(void) __naked {
  __asm
@@ -539,7 +567,7 @@ void main(void) {
  for(;;) {
   frame();input_read();
   input=keys?10:trigger?9:joy;
-  if(mode==0){random8();if((input==3 || input==7) && input!=prev_input){difficulty^=1;title();}if(input==9 && prev_input!=9){new_game();draw();}}
+  if(mode==0){random8();if((input==3 || input==7) && input!=prev_input){if(input==3){if(++difficulty==3)difficulty=0;}else{if(difficulty) difficulty--;else difficulty=2;}title();}if(input==9 && prev_input!=9){new_game();draw();}}
   else if(mode>=2){if(!input)repeat=0;if(menu_key){mode=0;depth=0;graphics();title();}else if(input==9 && prev_input!=9 && !repeat){new_game();draw();}}
   else {
    if(!input)repeat=0;

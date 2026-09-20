@@ -1,0 +1,391 @@
+{
+  "rom_sha256": "1f74dfb5d7b340c615831b246809524525091555e001e4d7f3f442b9435cf56f",
+  "checks": [
+    {
+      "name": "ntsc-entrance-shop",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-new-step-score-and-food",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-no-revisit-farming",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-wait-wall-no-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-gold-plus-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-cannot-buy-with-24",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-no-wasted-purchase-near-cap",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-buy-once-at-price",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-held-input-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-return-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-shop29-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-shop30-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-next-floor-reset",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-entry-not-farmable",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-results-exploration-count",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-retry-clears-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-new-step-score-and-food",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-no-revisit-farming",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-wait-wall-no-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-gold-plus-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-cannot-buy-with-24",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-no-wasted-purchase-near-cap",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-buy-once-at-price",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-held-input-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-return-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-shop29-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-shop30-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-next-floor-reset",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-entry-not-farmable",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-results-exploration-count",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-retry-clears-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-new-step-score-and-food",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-no-revisit-farming",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-wait-wall-no-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-gold-plus-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-cannot-buy-with-24",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-no-wasted-purchase-near-cap",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-buy-once-at-price",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-held-input-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-return-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-shop29-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-shop30-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-next-floor-reset",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-entry-not-farmable",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-results-exploration-count",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-retry-clears-exploration",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyclick-off",
+      "passed": true
+    },
+    {
+      "name": "ntsc-strict-vram",
+      "passed": true
+    },
+    {
+      "name": "pal-entrance-shop",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-new-step-score-and-food",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-no-revisit-farming",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-wait-wall-no-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-gold-plus-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-cannot-buy-with-24",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-no-wasted-purchase-near-cap",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-buy-once-at-price",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-held-input-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-return-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-shop29-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-shop30-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-next-floor-reset",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-entry-not-farmable",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-results-exploration-count",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-retry-clears-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-new-step-score-and-food",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-no-revisit-farming",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-wait-wall-no-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-gold-plus-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-cannot-buy-with-24",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-no-wasted-purchase-near-cap",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-buy-once-at-price",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-held-input-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-return-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-shop29-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-shop30-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-next-floor-reset",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-entry-not-farmable",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-results-exploration-count",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-retry-clears-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-new-step-score-and-food",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-no-revisit-farming",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-wait-wall-no-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-gold-plus-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-cannot-buy-with-24",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-no-wasted-purchase-near-cap",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-buy-once-at-price",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-held-input-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-return-cannot-restock",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-shop29-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-shop30-blocks-enemy",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-next-floor-reset",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-entry-not-farmable",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-results-exploration-count",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-retry-clears-exploration",
+      "passed": true
+    },
+    {
+      "name": "pal-keyclick-off",
+      "passed": true
+    },
+    {
+      "name": "pal-strict-vram",
+      "passed": true
+    }
+  ],
+  "audio_and_scroll_assembly_unchanged": true,
+  "method": "NTSC/PAL actual Z80 execution with controlled RAM fixtures and real keys; physical hardware untested."
+}
