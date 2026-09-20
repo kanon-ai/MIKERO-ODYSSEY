@@ -1,8 +1,8 @@
-# MIKERO-ODYSSEY — 難易度テスト版
+# MIKERO-ODYSSEY v1.7
 
-v1.7-difficulty-test（難易度調整の試遊版）。基準版を置き換えず、ショップ・探索スコア・HARDの鍵ルールを試す派生版です。
+正式版 **v1.7**。ショップ・探索スコア・HARDの鍵ルールを搭載しています。難易度テスト版からゲーム内容の変更はありません。
 
-[難易度テスト版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7-difficulty-test) · [公開基準版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
+[正式版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7) · [旧版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
 
 猫のミケロが、迷宮に迷い込んだ生物を肉球で元の世界へ送り返し、異世界の門を閉じる冒険です。
 初代MSX、512KB ASCII16 ROM、メインRAM32KB、VRAM16KB。原因不明の門、ウサギのKeeper、担架の救出演出はそのままです。
@@ -22,13 +22,13 @@ v1.7-difficulty-test（難易度調整の試遊版）。基準版を置き換え
 
 ![入口から見えるショップ](docs/shop-entrance.png)
 
-![難易度テスト版の実速度プレイ](docs/gameplay.gif)
+![v1.7の実速度プレイ](docs/gameplay.gif)
 
-画像・GIFはこの難易度テスト版のopenMSX収録です。GIFはEASYの実際のキー操作を約14秒、実速度・無音で収録しています。
+画像・GIFは正式版と同一ROMの難易度テスト版をopenMSXで収録したものです。GIFはEASYの実際のキー操作を約14秒、実速度・無音で収録しています。
 
 ## 起動
 
-試遊ZIPは展開してSTART.cmdを起動してください。リポジトリからはgame/START.cmdです。
+配布ZIPは展開してSTART.cmdを起動してください。リポジトリからはgame/START.cmdです。
 外部のopenMSX・C-BIOSが必要です。他のエミュレーターはROMをASCII16で読み込みます。
 旧版の途中状態を復元せず、最初から開始してください。左右でモード選択、SPACEで開始。
 矢印で移動・肉球、SPACEで待機、Zで回復。Keeperとショップは隣から方向入力で利用できます。
