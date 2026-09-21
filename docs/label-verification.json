@@ -1,0 +1,18 @@
+{
+  "rom_sha256": "dc576e3401f5cc51432ec6caefba3c171d9c766804f47f8b9850680ec5b354de",
+  "only_two_label_strings_changed": true,
+  "checks": [
+    {
+      "standard": "ntsc",
+      "new_game_labels": true,
+      "restart_floor_one": true,
+      "vram_violations": 0
+    },
+    {
+      "standard": "pal",
+      "new_game_labels": true,
+      "restart_floor_one": true,
+      "vram_violations": 0
+    }
+  ]
+}

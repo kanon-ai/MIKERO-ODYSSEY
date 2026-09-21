@@ -1,8 +1,8 @@
-# MIKERO-ODYSSEY v1.7.1
+# MIKERO-ODYSSEY v1.7.2
 
-正式版 **v1.7.1**。FOODが0になった後のHP減少を20行動ごとに調整しました。ショップ・探索スコア・HARDの鍵ルールも搭載しています。
+正式版 **v1.7.2**。結果画面の「TRY AGAIN」を「NEW GAME」に変更しました。FOODが0になった後のHP減少を20行動ごとに調整しました。ショップ・探索スコア・HARDの鍵ルールも搭載しています。
 
-[正式版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7.1) · [旧版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
+[正式版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7.2) · [旧版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
 
 猫のミケロが、迷宮に迷い込んだ生物を肉球で元の世界へ送り返し、異世界の門を閉じる冒険です。
 初代MSX、512KB ASCII16 ROM、メインRAM32KB、VRAM16KB。原因不明の門、ウサギのKeeper、担架の救出演出はそのままです。

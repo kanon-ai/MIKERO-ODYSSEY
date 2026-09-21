@@ -304,7 +304,7 @@ void draw(void) {
  block(15,11,HERO);
  if(fx){block(fx_x,fx_y,SPARK);fx=0;}
  text(1,22,message);
- text(1,23,mode>=2?"SPACE:TRY AGAIN  X:TITLE":"ARROWS:MOVE SPACE:WAIT Z:HEAL");
+ text(1,23,mode>=2?"SPACE:NEW GAME   X:TITLE":"ARROWS:MOVE SPACE:WAIT Z:HEAL");
  if(mode>=2){
   for(y=7;y<19;y++)text(2,y,"                            ");
   if(mode==3)text(9,8,"GATE CLOSED!");
@@ -313,7 +313,7 @@ void draw(void) {
   text(5,14,difficulty==2?"BEST HARD":difficulty?"BEST NORMAL":"BEST EASY");number(17,14,high_score,5);
   text(5,15,"BEST RUN FLOOR");number(21,15,record_floor,2);
   text(5,16,"EXPLORED");number(17,16,explored,5);
-  text(5,17,"SPACE: TRY AGAIN");
+  text(5,17,"SPACE: NEW GAME ");
  }
  if((scroll_dx || scroll_dy) && mode==1)half_step();
  scroll_dx=0;scroll_dy=0;

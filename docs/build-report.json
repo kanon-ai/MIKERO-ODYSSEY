@@ -58,6 +58,6 @@
     "stock_per_floor": 1
   },
   "exploration_score_per_new_cell": 1,
-  "sha256": "cfe7d6801185b57d7f6998a63f919ce843f09eacee325408730ddf08826cae3c",
+  "sha256": "dc576e3401f5cc51432ec6caefba3c171d9c766804f47f8b9850680ec5b354de",
   "physical_hardware_tested": false
 }
