@@ -1,13 +1,16 @@
-# MIKERO-ODYSSEY v1.7
+# MIKERO-ODYSSEY v1.7.1
 
-正式版 **v1.7**。ショップ・探索スコア・HARDの鍵ルールを搭載しています。難易度テスト版からゲーム内容の変更はありません。
+正式版 **v1.7.1**。FOODが0になった後のHP減少を20行動ごとに調整しました。ショップ・探索スコア・HARDの鍵ルールも搭載しています。
 
-[正式版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7) · [旧版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
+[正式版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7.1) · [旧版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
 
 猫のミケロが、迷宮に迷い込んだ生物を肉球で元の世界へ送り返し、異世界の門を閉じる冒険です。
 初代MSX、512KB ASCII16 ROM、メインRAM32KB、VRAM16KB。原因不明の門、ウサギのKeeper、担架の救出演出はそのままです。
 
 ## 今回の変更
+
+- FOODが0の間は20行動ごとにHP−1（全難易度共通）。魚・ショップ・次階の補給で空腹カウントをリセット。
+- 食料があるときの消費・自然回復、敵や罠のダメージは従来どおり。
 
 - EASYは15階。NORMALとHARDは30階。
 - HARDはNORMALと同じ戦闘・補給設定に、各階の鍵探索を追加。踏むだけで取得し、階段で自動使用。
@@ -24,7 +27,7 @@
 
 ![v1.7の実速度プレイ](docs/gameplay.gif)
 
-画像・GIFは正式版と同一ROMの難易度テスト版をopenMSXで収録したものです。GIFはEASYの実際のキー操作を約14秒、実速度・無音で収録しています。
+画像・GIFはv1.7と同一ROMの難易度テスト版をopenMSXで収録したものです。v1.7.1では空腹ダメージのみを変更し、画面と移動速度は同じです。GIFはEASYの実際のキー操作を約14秒、実速度・無音で収録しています。
 
 ## 起動
 
@@ -34,6 +37,10 @@
 矢印で移動・肉球、SPACEで待機、Zで回復。Keeperとショップは隣から方向入力で利用できます。
 
 ## 検証
+
+[v1.7.1の空腹調整検証](docs/starvation-verification.json) · [再ビルド一致](docs/rebuild-verification.json)
+
+以下のゲーム全体の記録はv1.7時点のものです。
 
 [ショップ・探索](docs/exploration-verification.json) · [HARD・鍵・記録](docs/hard-verification.json) · [全120地形×3モード](docs/layout-verification.json) · [スクロール](docs/scroll-verification.json)
 

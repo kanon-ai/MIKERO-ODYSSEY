@@ -29,11 +29,11 @@
   },
   "rom_bytes": 524288,
   "mapper": "ASCII16",
-  "code_end": "0x7d96",
-  "code_used": 15766,
+  "code_end": "0x7dad",
+  "code_used": 15789,
   "ram_start": "0xc000",
-  "static_ram_bytes": 7051,
-  "ram_end": "0xdb8b",
+  "static_ram_bytes": 7052,
+  "ram_end": "0xdb8c",
   "required_main_ram_bytes": 32768,
   "required_vram_bytes": 16384,
   "viewport_blocks": [
@@ -58,6 +58,6 @@
     "stock_per_floor": 1
   },
   "exploration_score_per_new_cell": 1,
-  "sha256": "1f74dfb5d7b340c615831b246809524525091555e001e4d7f3f442b9435cf56f",
+  "sha256": "cfe7d6801185b57d7f6998a63f919ce843f09eacee325408730ddf08826cae3c",
   "physical_hardware_tested": false
 }

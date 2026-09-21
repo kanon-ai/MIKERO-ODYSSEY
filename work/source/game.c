@@ -52,6 +52,7 @@ void copy_bytes(void) __naked {
 u8 ex[MAXEN],ey[MAXEN],eh[MAXEN],et[MAXEN];
 u8 mode,depth,px,py,hp,maxhp,level,xp,potions,gold,attack,seed,variant;
 u8 enemy_count,page,input,prev_input,repeat,dirty,paused,foodclock;
+u8 hungerclock;
 u8 turns,fx,fx_x,fx_y,sound_left,psg_mix,reg_num,reg_val;
 u8 joy,trigger,keys,info_id,kill_count,heal_count,damage_count;
 u16 food,rng,turn_count,screen_count;
@@ -414,7 +415,7 @@ void load_floor(void) {
   }
   if(t==CROWN && depth<depth_max)map[n]=STAIRS;
  }
- px=5;py=5;foodclock=0;
+ px=5;py=5;foodclock=0;hungerclock=0;
  map[200]=SHOP;
  has_key=0;
  if(difficulty==2){
@@ -466,8 +467,8 @@ void enemy_turn(void) {
 void tick_turn(void) {
  music_step();turns++;turn_count++;enemy_turn();
  if(mode!=1)return;
- if(food) {food--;if(++foodclock==(difficulty?28:14)){foodclock=0;if(hp<maxhp)hp++;}}
- else {say("STARVING! FIND SOME FOOD.");hurt(1);}
+ if(food) {hungerclock=0;food--;if(++foodclock==(difficulty?28:14)){foodclock=0;if(hp<maxhp)hp++;}}
+ else {say("STARVING! FIND SOME FOOD.");if(++hungerclock==20){hungerclock=0;hurt(1);}}
  dirty=1;
 }
 void fight(u8 i) {
@@ -492,7 +493,7 @@ void move_player(i8 dx,i8 dy) {
   if(t==SOLDOUT)say("SHOP: SOLD OUT. THANK YOU!");
   else if(gold<25)say("SHOP: FISH 25G / +100 FOOD.");
   else if(food>899)say("SHOP: YOU HAVE ENOUGH FOOD.");
-  else {gold-=25;food+=100;put(nx,ny,SOLDOUT);say("SHOP: +100 FOOD. THANK YOU!");sfx(55);}
+  else {gold-=25;food+=100;hungerclock=0;put(nx,ny,SOLDOUT);say("SHOP: +100 FOOD. THANK YOU!");sfx(55);}
   return;
  }
  if(t==SHRINE){

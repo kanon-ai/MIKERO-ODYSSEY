@@ -1,0 +1,359 @@
+{
+  "rom_sha256": "cfe7d6801185b57d7f6998a63f919ce843f09eacee325408730ddf08826cae3c",
+  "checks": [
+    {
+      "name": "ntsc-mode0-nineteen-steps-no-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-twentieth-step-one-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-twenty-waits-one-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-last-food-no-hunger-charge",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-wall-no-hunger-tick",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-fish-resets-before-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-shop-resets-immediately",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-healing-action-counted",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-paw-action-counted",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-fed-regeneration-unchanged",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-last-chance-key",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-key-allows-escape-and-reset",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-twentieth-action-still-rescues",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode0-retry-clears-counter",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-nineteen-steps-no-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-twentieth-step-one-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-twenty-waits-one-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-last-food-no-hunger-charge",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-wall-no-hunger-tick",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-fish-resets-before-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-shop-resets-immediately",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-healing-action-counted",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-paw-action-counted",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-fed-regeneration-unchanged",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-last-chance-key",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-key-allows-escape-and-reset",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-twentieth-action-still-rescues",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode1-retry-clears-counter",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-nineteen-steps-no-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-twentieth-step-one-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-twenty-waits-one-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-last-food-no-hunger-charge",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-wall-no-hunger-tick",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-fish-resets-before-damage",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-shop-resets-immediately",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-healing-action-counted",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-paw-action-counted",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-fed-regeneration-unchanged",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-last-chance-key",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-key-allows-escape-and-reset",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-twentieth-action-still-rescues",
+      "passed": true
+    },
+    {
+      "name": "ntsc-mode2-retry-clears-counter",
+      "passed": true
+    },
+    {
+      "name": "ntsc-vram",
+      "passed": true
+    },
+    {
+      "name": "ntsc-keyboard-click-disabled",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-nineteen-steps-no-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-twentieth-step-one-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-twenty-waits-one-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-last-food-no-hunger-charge",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-wall-no-hunger-tick",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-fish-resets-before-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-shop-resets-immediately",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-healing-action-counted",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-paw-action-counted",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-fed-regeneration-unchanged",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-last-chance-key",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-key-allows-escape-and-reset",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-twentieth-action-still-rescues",
+      "passed": true
+    },
+    {
+      "name": "pal-mode0-retry-clears-counter",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-nineteen-steps-no-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-twentieth-step-one-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-twenty-waits-one-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-last-food-no-hunger-charge",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-wall-no-hunger-tick",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-fish-resets-before-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-shop-resets-immediately",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-healing-action-counted",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-paw-action-counted",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-fed-regeneration-unchanged",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-last-chance-key",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-key-allows-escape-and-reset",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-twentieth-action-still-rescues",
+      "passed": true
+    },
+    {
+      "name": "pal-mode1-retry-clears-counter",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-nineteen-steps-no-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-twentieth-step-one-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-twenty-waits-one-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-last-food-no-hunger-charge",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-wall-no-hunger-tick",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-fish-resets-before-damage",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-shop-resets-immediately",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-healing-action-counted",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-paw-action-counted",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-fed-regeneration-unchanged",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-last-chance-key",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-key-allows-escape-and-reset",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-twentieth-action-still-rescues",
+      "passed": true
+    },
+    {
+      "name": "pal-mode2-retry-clears-counter",
+      "passed": true
+    },
+    {
+      "name": "pal-vram",
+      "passed": true
+    },
+    {
+      "name": "pal-keyboard-click-disabled",
+      "passed": true
+    }
+  ],
+  "graphics_and_maps_unchanged": true,
+  "physical_hardware_tested": false
+}
