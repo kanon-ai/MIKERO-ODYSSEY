@@ -1,0 +1,37 @@
+{
+  "rom_sha256": "eb710ea0e88d758ad729cc69cd4fb724ea2aa2aea11cb2dc72960c08b78082e1",
+  "results": [
+    {
+      "standard": "ntsc",
+      "median_step_seconds": 0.27010583747375705,
+      "intervals": [
+        0.30010043175878387,
+        0.2701055581086429,
+        0.2700982946156554,
+        0.28012163557100145,
+        0.2700882374715228,
+        0.28008978794790984,
+        0.2701061168388712
+      ],
+      "short_press_one_step": true,
+      "vertical_and_camera": true,
+      "vram_timing_violations": 0
+    },
+    {
+      "standard": "pal",
+      "median_step_seconds": 0.2800978895362398,
+      "intervals": [
+        0.3651047828704481,
+        0.2801177244593944,
+        0.28008336255026833,
+        0.27511233969680404,
+        0.2801004038222743,
+        0.2800978895362398
+      ],
+      "short_press_one_step": true,
+      "vertical_and_camera": true,
+      "vram_timing_violations": 0
+    }
+  ],
+  "fixture": "Empty corridor, no enemies; emulated Z80, not physical hardware"
+}

@@ -233,7 +233,6 @@ void compass(void) {
 }
 void draw(void) {
  u8 x,y,i;
- if((scroll_dx || scroll_dy) && mode==1){copy_src=screen;copy_dst=scroll_screen;copy_len=768;copy_bytes();}
  clear_screen();
  view_origin=map+index(px,py);
  text(1,0,difficulty==2?"HARD":difficulty?"NORMAL":"EASY");if(difficulty==2)text(6,0,has_key?"KEY":"---");text(10,0,"F");number(11,0,depth,2);text(14,0,"LV");number(16,0,level,2);text(21,0,"G");number(22,0,gold,3);

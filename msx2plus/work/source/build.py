@@ -38,6 +38,6 @@ assert len(rom)==524288
 out=OUT/'MIKERO-ODYSSEY.rom'
 if not out.exists() or out.read_bytes()!=rom:out.write_bytes(rom)
 report.update(rom_bytes=len(rom),mapper='ASCII16',code_end=hex(high),code_used=high-0x4000,ram_start='0xc000',static_ram_bytes=ram_bytes,ram_end=hex(0xc000+ram_bytes),required_main_ram_bytes=32768,required_vram_bytes=16384,viewport_blocks=[15,9],scroll_step_pixels=16,scroll_display_phases_pixels=[8,8],music_loop_actions=64,difficulty_floors={'EASY':15,'NORMAL':30,'HARD':30},hard_requires_floor_key=True,shop={'price_gold':25,'food':100,'stock_per_floor':1},exploration_score_per_new_cell=1,sha256=hashlib.sha256(rom).hexdigest(),physical_hardware_tested=False)
-report.update(graphics_sha256=hashlib.sha256((BUILD/'bitmap.bin').read_bytes()).hexdigest(),cat_frames=4,cat_sprite_planes=6,max_sprites_per_scanline=7,environment_frames_per_floor=1,scroll_display_phases_pixels=[2]*8,sound='OPLL melody/harmony/bass; PSG effects',platform='MSX2+',cpu='Z80',required_vram_bytes=131072,bitmap_mode='SCREEN 5',hardware_scroll=True)
+report.update(graphics_sha256=hashlib.sha256((BUILD/'bitmap.bin').read_bytes()).hexdigest(),cat_frames=4,cat_sprite_planes=6,max_sprites_per_scanline=7,environment_frames_per_floor=1,scroll_display_phases_pixels=[8]*2,sound='OPLL melody/harmony/bass; PSG effects',platform='MSX2+',cpu='Z80',required_vram_bytes=131072,bitmap_mode='SCREEN 5',hardware_scroll=True)
 (OUT/'build-report.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))

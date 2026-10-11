@@ -94,6 +94,13 @@ def generate_bitmap(build):
   for yy,row in enumerate(rows):
    for xx,b in enumerate(row):
     if b=='1':d.point((x+xx+1,y+yy),fill=15 if yy<3 else 14 if yy<5 else 7)
+ # Rescue-only quadrants in unused lowercase glyph slots 100..111.
+ # Change floor index 1 to black; keep every character/outline pixel intact.
+ for j,t in enumerate((7,27,28)):
+  im=tile(t);im.putdata([0 if v==1 else v for v in im.getdata()])
+  for q in range(4):
+   c=100+j*4+q
+   atlas.paste(im.crop(((q&1)*8,(q>>1)*8,(q&1)*8+8,(q>>1)*8+8)),((c&31)*8,32+(c>>5)*8))
  # HUD-only 8x8 symbols and restrained frame pieces (unused lowercase slots).
  icons={112:['.##.##..','.##.##..','........','..####..','.######.','.######.','..####..','........'],113:['...##...','..####..','...##...','..####..','.######.','.######.','..####..','........'],114:['........','...###.#','..######','.#######','..######','...###.#','........','........'],115:['..####..','.######.','.##..##.','.##..##.','.######.','..####..','........','........']}
  for c,rows in icons.items():

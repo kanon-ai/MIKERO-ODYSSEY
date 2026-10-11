@@ -6,7 +6,7 @@
     64
   ],
   "maps_sha256": "378738b2c0612c947c6edd65e18ba7f5511f1d5c19e36479a2b8b63e17e6dec7",
-  "graphics_sha256": "52b1ed672a1eae12db7d3a709df396f6c6de53a44bdf29f3ee05b064c341e58c",
+  "graphics_sha256": "7643e0ddc3376acc0bec7d899a3e053e4ddd9ed4702d1516cfa78479e35aee0d",
   "themes": [
     "MOSS LANTERNS",
     "CANDY SPORES",
@@ -29,11 +29,11 @@
   },
   "rom_bytes": 524288,
   "mapper": "ASCII16",
-  "code_end": "0x7b36",
-  "code_used": 15158,
+  "code_end": "0x7cb2",
+  "code_used": 15538,
   "ram_start": "0xc000",
-  "static_ram_bytes": 8402,
-  "ram_end": "0xe0d2",
+  "static_ram_bytes": 8691,
+  "ram_end": "0xe1f3",
   "required_main_ram_bytes": 32768,
   "required_vram_bytes": 131072,
   "viewport_blocks": [
@@ -42,14 +42,8 @@
   ],
   "scroll_step_pixels": 16,
   "scroll_display_phases_pixels": [
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2,
-    2
+    8,
+    8
   ],
   "music_loop_actions": 64,
   "difficulty_floors": {
@@ -64,7 +58,7 @@
     "stock_per_floor": 1
   },
   "exploration_score_per_new_cell": 1,
-  "sha256": "d0e2ed24c0a7ea008d5a75d117aef35742f1b147d9d049a187620d264884bf1b",
+  "sha256": "d8a8dd4811b4288280c5805c20106026024cfabb456793cd980acbc81cedae2c",
   "physical_hardware_tested": false,
   "sound": "OPLL melody/harmony/bass; PSG effects",
   "platform": "MSX2+",

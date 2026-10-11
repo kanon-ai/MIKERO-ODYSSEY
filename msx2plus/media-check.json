@@ -1,9 +1,9 @@
 {
-  "rom_sha256": "d0e2ed24c0a7ea008d5a75d117aef35742f1b147d9d049a187620d264884bf1b",
+  "rom_sha256": "d8a8dd4811b4288280c5805c20106026024cfabb456793cd980acbc81cedae2c",
   "frames": 464,
   "seconds": 7.74,
   "speed_multiplier": 1,
-  "audio_peak": 3200,
+  "audio_peak": 4502,
   "gameplay_ram_writes": 0,
   "method": "Native Z80 NTSC frame captures and mixed OPLL/PSG audio; real keyboard; unchanged actual timing."
 }

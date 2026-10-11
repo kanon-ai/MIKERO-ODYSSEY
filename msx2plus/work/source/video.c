@@ -5,6 +5,9 @@ u8 cache[256],ui_cache[768],command[15],sat2[33],sprite_colors[128];
 u8 vbank,csx,csy,cdx,cdy,cw,ch;
 u16 csy16,cdy16;
 u8 old_keyi[5];
+/* Actor changes are committed only after the camera reaches its new cell. */
+u8 actor_count,actor_cells[144],actor_tiles[144];
+const u8 tile_base[32]={0,1,2,56,4,5,60,52,8,9,10,32,36,40,44,48,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
 void video_install(void);
 void video_sprites(void);
 void vr(u8 r,u8 v){reg_num=r;reg_val=v;regwrite();}
@@ -80,6 +83,10 @@ void bitmap_upload(void) __naked {
  __endasm;
 }
 void glyph(u8 c,u8 x,u8 y){
+ if(rescue_pending && c>=128){
+  u8 t=(c-128)>>2;
+  if(t==7 || t==27 || t==28)c=100+(t==7?0:t==27?4:8)+(c&3);
+ }
  if(c<128){csx=(c&31)*8;csy16=544+(u16)(c>>5)*8;}
  else {u8 t=(c-128)>>2;csx=(t&15)*16+(c&1)*8;csy16=512+(u16)(t>>4)*16+((c>>1)&1)*8;}
  cdx=x;cdy16=256+y;cw=8;ch=8;blit();
@@ -121,35 +128,66 @@ void present(void){
  u8 x,y,t,wx,wy,k,n,tx,ty;u16 p;
  video_busy=1;
  if(mode==1 && !rescue_pending && !ending_pending){
-  for(y=0;y<9;y++)for(x=0;x<16;x++){
-   wx=px+x-7;wy=py+y-4;k=((wy&15)<<4)|(wx&15);
-   if(x==15)t=DARK;
-   else {p=(u16)(y*2+3)*32+x*2+1;t=(screen[p]-128)>>2;if(x==7 && y==4)t=(scroll_under[0]-128)>>2;}
-   t=pose_tile(t);if(cache[k]!=t){cache[k]=t;bitmap_tile(t,wx*16,wy*16);}
+  actor_count=0;
+  {
+   const u8 *cell=screen+97;
+   u8 f=(frame_tick>>3)&3,old,base;
+   u8 moving=video_scene==1 && (scroll_dx || scroll_dy);
+   wy=py-4;
+   for(y=0;y<9;y++,wy++,cell+=32){
+    wx=px-7;k=((wy&15)<<4)|(wx&15);
+    for(x=0;x<16;x++,wx++,cell+=2){
+     t=x==15?DARK:(*cell-128)>>2;
+     if(x==7 && y==4)t=(scroll_under[0]-128)>>2;
+     base=tile_base[t];t=base>=32?base+f:base;old=cache[k];
+     if(old!=t){
+      if(moving && ((t>=32 && t<52) || (old>=32 && old<52))){
+       actor_cells[actor_count]=k;actor_tiles[actor_count++]=t;
+      }else{cache[k]=t;bitmap_tile(t,wx<<4,wy<<4);}
+     }
+     k=(k&240)|((k+1)&15);
+    }
+   }
   }
-  /* Bottom panel: same stats/messages/keys, independent of the world. */
-  for(y=0;y<6;y++)for(x=0;x<32;x++){
-   p=(u16)(y==0?2:y==1?0:y==2?1:y==3?21:y==4?22:23)*32+x;t=screen[p];
-   if(y==0 || y==3)t=x==0?117:x==31?118:116;
-   else if(x==0 || x==31)t=x==0?120:121;
-   else if(y==1 && (x==9 || x==19 || x==27))t=119;
-   if(ui_cache[(u16)y*32+x]!=t){ui_cache[(u16)y*32+x]=t;glyph(t,x*8,y<3?144+y*8:y==3?172:y==4?182:196);}
+  /* Only the changing rows need a per-cell cache scan. */
+  {
+   const u8 *row;
+   u8 *saved;
+   u8 fresh=ui_cache[0]==255,dy;
+   for(y=0;y<6;y++){
+    if(!fresh && (y==0 || y==3 || y==5))continue;
+    row=screen+(u16)(y==0?2:y==1?0:y==2?1:y==3?21:y==4?22:23)*32;
+    saved=ui_cache+(u16)y*32;
+    dy=y<3?144+y*8:y==3?172:y==4?182:196;
+    for(x=0;x<32;x++,saved++){
+     t=*row++;
+     if(y==0 || y==3)t=x==0?117:x==31?118:116;
+     else if(x==0 || x==31)t=x==0?120:121;
+     else if(y==1 && (x==9 || x==19 || x==27))t=119;
+     if(*saved!=t){*saved=t;glyph(t,x<<3,dy);}
+    }
+   }
+   if(fresh){
+    /* The rails and bottom rule persist until video_clear(). */
+    command[4]=1;command[5]=0;command[6]=168;command[7]=1;
+    command[8]=1;command[9]=0;command[10]=40;command[11]=0;
+    command[12]=3;command[13]=0;command[14]=0x80;send_command();
+    command[4]=255;send_command();
+    command[4]=0;command[5]=0;command[6]=207;command[7]=1;
+    command[8]=0;command[9]=1;command[10]=1;command[11]=0;
+    command[12]=0x33;command[13]=0;command[14]=0xc0;send_command();
+   }
   }
-  /* Extend the side rails across the spaced footer rows. */
-  command[4]=1;command[5]=0;command[6]=168;command[7]=1;
-  command[8]=1;command[9]=0;command[10]=40;command[11]=0;
-  command[12]=3;command[13]=0;command[14]=0x80;send_command();
-  command[4]=255;send_command();
-  /* Close the frame with four pixels below the key legend. */
-  command[4]=0;command[5]=0;command[6]=207;command[7]=1;
-  command[8]=0;command[9]=1;command[10]=1;command[11]=0;
-  command[12]=0x33;command[13]=0;command[14]=0xc0;send_command();
   wait_vdp();tx=px*16-120;ty=py*16-64;
   if(video_scene!=1){camera_x=tx;camera_y=ty;video_scene=1;video_live=1;}
   else if(scroll_dx || scroll_dy){
-   for(n=0;n<8;n++){camera_x+=scroll_dx*2;camera_y+=scroll_dy*2;frame();video_sprites();}
+   for(n=0;n<2;n++){camera_x+=scroll_dx*8;camera_y+=scroll_dy*8;frame();video_sprites();}
   }
   camera_x=tx;camera_y=ty;video_live=1;video_sprites();
+  for(n=0;n<actor_count;n++){
+   k=actor_cells[n];t=actor_tiles[n];cache[k]=t;bitmap_tile(t,k<<4,k&240);
+  }
+  wait_vdp();
  }else{
   if(video_scene==1){
    for(p=0;p<768;p++)ui_cache[p]=255;

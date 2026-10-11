@@ -1,0 +1,13 @@
+{
+  "rom_sha256": "e041eef391e80f8bbdfb637bfb897c6dabb36dc0128d6a50f546b5ecbc912b9b",
+  "checks": [
+    "initial-icons-values-empty-message-and-keys",
+    "healing-message-and-hp",
+    "normal-walk-clears-message-keeps-keys",
+    "maximum-width-values-hard-key-and-compass",
+    "212-line-panel-and-title-height-unchanged"
+  ],
+  "maps_world_art_palette_title_and_sprites_unchanged": true,
+  "vram_timing_violations": 0,
+  "physical_hardware_tested": false
+}

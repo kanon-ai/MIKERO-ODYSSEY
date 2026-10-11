@@ -1,0 +1,8 @@
+{
+  "rom_sha256": "d8a8dd4811b4288280c5805c20106026024cfabb456793cd980acbc81cedae2c",
+  "rescue_green_floor_pixels": 0,
+  "world_tiles_sprites_palette_maps_unchanged": true,
+  "rescue_result": true,
+  "vram_timing_violations": 0,
+  "physical_hardware_tested": false
+}

@@ -1,0 +1,70 @@
+{
+  "rom_sha256": "e041eef391e80f8bbdfb637bfb897c6dabb36dc0128d6a50f546b5ecbc912b9b",
+  "results": [
+    {
+      "standard": "ntsc",
+      "dx": 1,
+      "dy": 0,
+      "early_actor_samples": 0,
+      "final_tiles_match": true,
+      "attack_without_scroll": true
+    },
+    {
+      "standard": "ntsc",
+      "dx": -1,
+      "dy": 0,
+      "early_actor_samples": 0,
+      "final_tiles_match": true,
+      "attack_without_scroll": true
+    },
+    {
+      "standard": "ntsc",
+      "dx": 0,
+      "dy": 1,
+      "early_actor_samples": 0,
+      "final_tiles_match": true,
+      "attack_without_scroll": true
+    },
+    {
+      "standard": "ntsc",
+      "dx": 0,
+      "dy": -1,
+      "early_actor_samples": 0,
+      "final_tiles_match": true,
+      "attack_without_scroll": true
+    },
+    {
+      "standard": "pal",
+      "dx": 1,
+      "dy": 0,
+      "early_actor_samples": 0,
+      "final_tiles_match": true,
+      "attack_without_scroll": true
+    },
+    {
+      "standard": "pal",
+      "dx": -1,
+      "dy": 0,
+      "early_actor_samples": 0,
+      "final_tiles_match": true,
+      "attack_without_scroll": true
+    },
+    {
+      "standard": "pal",
+      "dx": 0,
+      "dy": 1,
+      "early_actor_samples": 0,
+      "final_tiles_match": true,
+      "attack_without_scroll": true
+    },
+    {
+      "standard": "pal",
+      "dx": 0,
+      "dy": -1,
+      "early_actor_samples": 0,
+      "final_tiles_match": true,
+      "attack_without_scroll": true
+    }
+  ],
+  "method": "Injected adjacent bat fixture; 1ms sampling; real input; no physical hardware"
+}

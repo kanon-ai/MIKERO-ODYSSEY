@@ -1,16 +1,16 @@
 # MIKERO-ODYSSEY
 
-MSX版に加え、**MSX2+版 v0.1.4（公開試作）**を追加しました。
+MSX版に加え、**MSX2+版 v0.1.7（公開試作）**を追加しました。
 
 | 版 | 対応環境 | ダウンロード・紹介 |
 | --- | --- | --- |
 | MSX版 v1.7.3（正式版） | 初代MSX・PSG | [正式版リリース](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7.3) |
-| MSX2+版 v0.1.4（試作版） | MSX2+・Z80・MSX-MUSIC | [紹介・操作・ソース](msx2plus/README.md) / [試作版リリース](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/msx2plus-v0.1.4) |
+| MSX2+版 v0.1.7（試作版） | MSX2+・Z80・MSX-MUSIC | [紹介・操作・ソース](msx2plus/README.md) / [試作版リリース](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/msx2plus-v0.1.7) |
 
 ## MSX2+版
 
 カラフルなグラフィック、V9958の縦横スクロール、OPLLの3声BGMを搭載。
-落ち着いた床と暗い壁、アイコン付きの情報パネルに更新しました。
+落ち着いた床と暗い壁、アイコン付きの情報パネル。v0.1.7では移動を高速化し、敵の重なりと救出画面の背景を修正しました。
 
 ![MSX2+タイトル](msx2plus/title.png)
 

@@ -1,0 +1,178 @@
+{
+  "rom_sha256": "e041eef391e80f8bbdfb637bfb897c6dabb36dc0128d6a50f546b5ecbc912b9b",
+  "checks": [
+    {
+      "name": "ntsc-refresh-mode",
+      "passed": true
+    },
+    {
+      "name": "ntsc-boot-easy",
+      "passed": true
+    },
+    {
+      "name": "ntsc-short-press-one-step",
+      "passed": true
+    },
+    {
+      "name": "ntsc-hardware-camera-two-phases",
+      "passed": true,
+      "camera_samples": [
+        216,
+        224,
+        232
+      ]
+    },
+    {
+      "name": "ntsc-camera-centers-player",
+      "passed": true
+    },
+    {
+      "name": "ntsc-vertical",
+      "passed": true
+    },
+    {
+      "name": "ntsc-held-input",
+      "passed": true,
+      "step_seconds": [
+        0.0,
+        0.29,
+        0.48,
+        0.68,
+        0.88,
+        1.09
+      ]
+    },
+    {
+      "name": "ntsc-three-opll-voices",
+      "passed": true
+    },
+    {
+      "name": "ntsc-opll-key-off",
+      "passed": true
+    },
+    {
+      "name": "ntsc-opll-muted-at-rest",
+      "passed": true
+    },
+    {
+      "name": "ntsc-heal",
+      "passed": true
+    },
+    {
+      "name": "ntsc-hard-stairs-locked",
+      "passed": true
+    },
+    {
+      "name": "ntsc-hard-key",
+      "passed": true
+    },
+    {
+      "name": "ntsc-floor-transition",
+      "passed": true
+    },
+    {
+      "name": "ntsc-rescue-result",
+      "passed": true
+    },
+    {
+      "name": "ntsc-retry",
+      "passed": true
+    },
+    {
+      "name": "ntsc-gate-ending",
+      "passed": true
+    },
+    {
+      "name": "ntsc-vram-timing",
+      "passed": true,
+      "count": 0
+    },
+    {
+      "name": "pal-refresh-mode",
+      "passed": true
+    },
+    {
+      "name": "pal-boot-easy",
+      "passed": true
+    },
+    {
+      "name": "pal-short-press-one-step",
+      "passed": true
+    },
+    {
+      "name": "pal-hardware-camera-two-phases",
+      "passed": true,
+      "camera_samples": [
+        216,
+        224,
+        232
+      ]
+    },
+    {
+      "name": "pal-camera-centers-player",
+      "passed": true
+    },
+    {
+      "name": "pal-vertical",
+      "passed": true
+    },
+    {
+      "name": "pal-held-input",
+      "passed": true,
+      "step_seconds": [
+        0.01,
+        0.38,
+        0.58,
+        0.78,
+        0.98,
+        1.18
+      ]
+    },
+    {
+      "name": "pal-three-opll-voices",
+      "passed": true
+    },
+    {
+      "name": "pal-opll-key-off",
+      "passed": true
+    },
+    {
+      "name": "pal-opll-muted-at-rest",
+      "passed": true
+    },
+    {
+      "name": "pal-heal",
+      "passed": true
+    },
+    {
+      "name": "pal-hard-stairs-locked",
+      "passed": true
+    },
+    {
+      "name": "pal-hard-key",
+      "passed": true
+    },
+    {
+      "name": "pal-floor-transition",
+      "passed": true
+    },
+    {
+      "name": "pal-rescue-result",
+      "passed": true
+    },
+    {
+      "name": "pal-retry",
+      "passed": true
+    },
+    {
+      "name": "pal-gate-ending",
+      "passed": true
+    },
+    {
+      "name": "pal-vram-timing",
+      "passed": true,
+      "count": 0
+    }
+  ],
+  "method": "Z80, V9958, OPLL emulation; labelled injected fixtures, actual input; no physical hardware validation."
+}

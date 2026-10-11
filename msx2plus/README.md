@@ -1,16 +1,32 @@
-# MIKERO-ODYSSEY MSX2+ v0.1.4
+# MIKERO-ODYSSEY MSX2+ v0.1.7
 
 MSX2+向けの公開試作版です。Z80で動作し、R800は使用していません。
-[配布ZIP](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/msx2plus-v0.1.4) · [MSX版](../README.md)
+[配布ZIP](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/msx2plus-v0.1.7) · [MSX版](../README.md)
 
 ![タイトル](title.png)
 
 ![実速度プレイ](gameplay.gif)
 
 SCREEN 5のカラフルなタイルとキャラクター、落ち着いた床、暗い視野外の壁を採用。
-V9958の縦横スクロールを使い、1マスを2ピクセルずつ8段階で移動します。
+V9958の縦横スクロールを使い、1マスを8ピクセルずつ2段階で移動します。
 音楽はOPLLの主旋律・和音・低音、効果音はPSG。行動に合わせて音楽が進み、停止後に静かになります。
 下部はアイコン付き情報パネル。走査線の表示切り替え中は黒くして境目の乱れを軽減しています。
+
+## v0.1.7の変更
+
+- スクロールを8段階から2段階へ変更し、タイル走査と固定パネルの描画処理を最適化。
+- 敵の表示位置はスクロール完了後に更新。追跡する敵が主人公の旧位置に先に重なる現象を修正。
+- 救出時のミケロ・Keeper・担架の背景を黒に修正。
+- 入力リピートの設定、ゲームルール、音楽は維持しています。
+
+| 同じ通路での1マスの移動時間 | v0.1.4 | v0.1.7 |
+| --- | ---: | ---: |
+| 60Hz | 約0.375秒 | 約0.200秒 |
+| 50Hz | 約0.400秒 | 約0.200秒 |
+
+openMSX / Z80、敵なしの確認用通路で長押し継続移動の中央値を比較。実機や全場面での速度保証ではありません。
+
+![救出画面の背景修正](rescue-black-background.png)
 
 ## 必要環境と起動
 
@@ -30,9 +46,12 @@ EASYは15階、NORMAL/HARDは30階。HARDは鍵を取ってから階段を降り
 
 ## 検証範囲
 
-openMSX / C-BIOS / Z80で確認しています。今回のパネル修正は50Hz・60Hzで、
-数値、回復、移動、救出後の下部消去、タイトル復帰を確認。VRAMタイミング違反は0件。
-[60Hz検証](panel-verification.json) · [50Hz検証](panel-verification-pal.json) · [収録記録](media-check.json)
+openMSX / C-BIOS / Z80で確認しています。
+[最終ROMの速度・短押し・縦横移動](speed-check.json) · [救出画面の床色除去](rescue-floor-check.json) · [最新ROMの収録記録](media-check.json)
+
+救出背景の追加修正前に、上下左右・50/60Hzで敵の描画順序を検証し、音楽・回復・HARDの鍵・階移動・救出・再開・門閉鎖など36項目を確認しました。
+これらの記録は当時のROMハッシュを保持しています。最終ROMでは救出背景と移動速度を再確認しています。
+[敵の重なり修正](pre-rescue-actor-scroll-check.json) · [36項目の回帰検証](pre-rescue-verification.json)
 
 GIFはこの配布ROMを通常のキー操作で収録した実速度・無音の画像です。
 [OPLL・PSGの収録音声](opll-gameplay.wav)も同じ操作時のものです。
