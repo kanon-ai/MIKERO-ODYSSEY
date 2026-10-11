@@ -1,0 +1,74 @@
+{
+  "layouts": 120,
+  "all_maps_connected": true,
+  "map_size": [
+    64,
+    64
+  ],
+  "maps_sha256": "378738b2c0612c947c6edd65e18ba7f5511f1d5c19e36479a2b8b63e17e6dec7",
+  "graphics_sha256": "52b1ed672a1eae12db7d3a709df396f6c6de53a44bdf29f3ee05b064c341e58c",
+  "themes": [
+    "MOSS LANTERNS",
+    "CANDY SPORES",
+    "TIDAL TEMPLE",
+    "CRYSTAL SNOW",
+    "EMBER FOUNDRY",
+    "CLOCKWORK GOLD",
+    "AURORA GARDEN",
+    "STARLESS CROWN"
+  ],
+  "cat_frames": 4,
+  "cat_sprite_planes": 6,
+  "environment_frames_per_floor": 1,
+  "enemy_frames": 4,
+  "item_frames": 4,
+  "max_sprites_per_scanline": 7,
+  "irq_animation_target_hz": {
+    "ntsc": 30,
+    "pal": 25
+  },
+  "rom_bytes": 524288,
+  "mapper": "ASCII16",
+  "code_end": "0x7b36",
+  "code_used": 15158,
+  "ram_start": "0xc000",
+  "static_ram_bytes": 8402,
+  "ram_end": "0xe0d2",
+  "required_main_ram_bytes": 32768,
+  "required_vram_bytes": 131072,
+  "viewport_blocks": [
+    15,
+    9
+  ],
+  "scroll_step_pixels": 16,
+  "scroll_display_phases_pixels": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "music_loop_actions": 64,
+  "difficulty_floors": {
+    "EASY": 15,
+    "NORMAL": 30,
+    "HARD": 30
+  },
+  "hard_requires_floor_key": true,
+  "shop": {
+    "price_gold": 25,
+    "food": 100,
+    "stock_per_floor": 1
+  },
+  "exploration_score_per_new_cell": 1,
+  "sha256": "d0e2ed24c0a7ea008d5a75d117aef35742f1b147d9d049a187620d264884bf1b",
+  "physical_hardware_tested": false,
+  "sound": "OPLL melody/harmony/bass; PSG effects",
+  "platform": "MSX2+",
+  "cpu": "Z80",
+  "bitmap_mode": "SCREEN 5",
+  "hardware_scroll": true
+}

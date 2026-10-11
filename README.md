@@ -1,4 +1,24 @@
-# MIKERO-ODYSSEY v1.7.3
+# MIKERO-ODYSSEY
+
+MSX版に加え、**MSX2+版 v0.1.4（公開試作）**を追加しました。
+
+| 版 | 対応環境 | ダウンロード・紹介 |
+| --- | --- | --- |
+| MSX版 v1.7.3（正式版） | 初代MSX・PSG | [正式版リリース](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7.3) |
+| MSX2+版 v0.1.4（試作版） | MSX2+・Z80・MSX-MUSIC | [紹介・操作・ソース](msx2plus/README.md) / [試作版リリース](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/msx2plus-v0.1.4) |
+
+## MSX2+版
+
+カラフルなグラフィック、V9958の縦横スクロール、OPLLの3声BGMを搭載。
+落ち着いた床と暗い壁、アイコン付きの情報パネルに更新しました。
+
+![MSX2+タイトル](msx2plus/title.png)
+
+![MSX2+の実速度プレイ](msx2plus/gameplay.gif)
+
+openMSXで収録。実機・blueMSXは未検証です。[必要環境・検証範囲](msx2plus/README.md)をご覧ください。
+
+## MSX版 v1.7.3
 
 正式版 **v1.7.3**。BGM・効果音の音量を上げ、方向キーの短押しを扱いやすくしました。FOODが0になった後のHP減少を20行動ごとに調整しました。ショップ・探索スコア・HARDの鍵ルールも搭載しています。
 
