@@ -573,7 +573,7 @@ void main(void) {
   else {
    if(!input)repeat=0;
    if(input && (input!=prev_input || !repeat || (i8)(frame_tick-repeat)>=0)) {
-    repeat=frame_tick+6;if(!repeat)repeat=1;
+    repeat=frame_tick+((input<=7 && input!=prev_input)?18:6);if(!repeat)repeat=1;
     if(input==1)move_player(0,-1);if(input==3)move_player(1,0);if(input==5)move_player(0,1);if(input==7)move_player(-1,0);
     if(input==9){say("YOU WAIT AND LISTEN.");tick_turn();}
     if(input==10)heal();

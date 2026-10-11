@@ -571,11 +571,19 @@ music_write_volumes:
  ld a,#9
  out (0xa0),a
  ld a,(_music_volume)
+ call psg_volume_gain
  out (0xa1),a
  ld a,#10
  out (0xa0),a
  ld a,c
+ call psg_volume_gain
  out (0xa1),a
+ ret
+; Match PAWS music levels: +3 PSG steps, preserving exact silence.
+psg_volume_gain:
+ or a
+ ret z
+ add a,#3
  ret
 ; Four short units per bar. Repeated attacks preserve the march's triplet.
 ; Historical upper melody D5/E5/F#5; the held E is re-articulated at a turn.
@@ -649,6 +657,7 @@ sfx_volume:
  ld a,#8
  out (0xa0),a
  ld a,c
+ call psg_volume_gain
  out (0xa1),a
  ret
 sfx_periods:

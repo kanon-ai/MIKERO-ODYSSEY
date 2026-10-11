@@ -1,0 +1,45 @@
+[
+  {
+    "version": "candidate",
+    "standard": "ntsc",
+    "press_seconds": 0.2,
+    "steps": 1,
+    "step_times": [
+      0.01
+    ]
+  },
+  {
+    "version": "candidate",
+    "standard": "ntsc",
+    "press_seconds": 0.85,
+    "steps": 5,
+    "step_times": [
+      0.01,
+      0.31,
+      0.48,
+      0.65,
+      0.81
+    ]
+  },
+  {
+    "version": "candidate",
+    "standard": "pal",
+    "press_seconds": 0.2,
+    "steps": 1,
+    "step_times": [
+      0.03
+    ]
+  },
+  {
+    "version": "candidate",
+    "standard": "pal",
+    "press_seconds": 0.85,
+    "steps": 4,
+    "step_times": [
+      0.03,
+      0.39,
+      0.56,
+      0.72
+    ]
+  }
+]

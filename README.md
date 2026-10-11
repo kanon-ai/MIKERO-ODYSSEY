@@ -1,13 +1,19 @@
-# MIKERO-ODYSSEY v1.7.2
+# MIKERO-ODYSSEY v1.7.3
 
-正式版 **v1.7.2**。結果画面の「TRY AGAIN」を「NEW GAME」に変更しました。FOODが0になった後のHP減少を20行動ごとに調整しました。ショップ・探索スコア・HARDの鍵ルールも搭載しています。
+正式版 **v1.7.3**。BGM・効果音の音量を上げ、方向キーの短押しを扱いやすくしました。FOODが0になった後のHP減少を20行動ごとに調整しました。ショップ・探索スコア・HARDの鍵ルールも搭載しています。
 
-[正式版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7.2) · [旧版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
+[正式版をダウンロード](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.7.3) · [旧版 v1.6.1-test](https://github.com/kanon-ai/MIKERO-ODYSSEY/releases/tag/v1.6.1-test) · [操作・ルール・ビルド方法](docs/manual-ja.md)
 
 猫のミケロが、迷宮に迷い込んだ生物を肉球で元の世界へ送り返し、異世界の門を閉じる冒険です。
 初代MSX、512KB ASCII16 ROM、メインRAM32KB、VRAM16KB。原因不明の門、ウサギのKeeper、担架の救出演出はそのままです。
 
 ## 今回の変更
+
+- BGM・効果音のPSG音量を3段階アップ。行動時に鳴り、停止後に静かになる仕様は維持。
+- 方向キーの最初のリピート待ちを18フレームに調整。長押し継続時は従来の6フレーム設定。
+- 音符・フレーズ・ゲームバランスは変更していません。
+
+## これまでの主な変更
 
 - FOODが0の間は20行動ごとにHP−1（全難易度共通）。魚・ショップ・次階の補給で空腹カウントをリセット。
 - 食料があるときの消費・自然回復、敵や罠のダメージは従来どおり。
@@ -37,6 +43,10 @@
 矢印で移動・肉球、SPACEで待機、Zで回復。Keeperとショップは隣から方向入力で利用できます。
 
 ## 検証
+
+[v1.7.3のキー反応（NTSC/PAL）](docs/volume-input-verification.json) · [音量と無音の確認](docs/volume-check.json)
+
+blueMSXのC-BIOS TurboR設定で診断用自動歩行ROMを録音し、音量の増加（ピーク約9dB）と停止中の無音を確認しました。配布ROMは通常操作版です。openMSXでは0.2秒の短押しが1マスになることをNTSC/PALで確認しました。
 
 [v1.7.1の空腹調整検証](docs/starvation-verification.json) · [再ビルド一致](docs/rebuild-verification.json)
 
