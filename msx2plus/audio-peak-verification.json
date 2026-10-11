@@ -1,0 +1,9 @@
+{
+  "rom_sha256": "3affa0db4dbc1358b5055337a9da0c3b5b41897ef9b217093f8403e63983554c",
+  "peak": 12545,
+  "clipped_samples": 0,
+  "fragments": 64,
+  "effect_types": 8,
+  "method": "Injected sound state; mixed OPLL and PSG; each phrase paired with one of eight effects; emulator only",
+  "muted_at_rest": true
+}

@@ -342,6 +342,25 @@ fm_vol_ready:
  jp fm_write
 ; Z80-safe OPLL address/data delays; no turbo R timer dependency.
 fm_write:
+ ; Mirror the three music voices on unused channels 3..5.
+ push af
+ call fm_write_single
+ pop af
+ cp #0x10
+ ret c
+ cp #0x33
+ ret nc
+ push af
+ and #15
+ cp #3
+ jr nc,fm_no_mirror
+ pop af
+ add a,#3
+ jp fm_write_single
+fm_no_mirror:
+ pop af
+ ret
+fm_write_single:
  out (0x7c),a
  nop
  nop
@@ -382,6 +401,7 @@ _beep::
  ld a,#7
  out (0xa0),a
  ld a,(_psg_mix)
+ and #0xfd
  out (0xa1),a
  call sfx_render
  ei
@@ -425,6 +445,15 @@ sfx_render:
  out (0xa0),a
  ld a,e
  out (0xa1),a
+ ; Same effect on the otherwise unused PSG B channel.
+ ld a,#2
+ out (0xa0),a
+ ld a,b
+ out (0xa1),a
+ ld a,#3
+ out (0xa0),a
+ ld a,e
+ out (0xa1),a
  jr sfx_volume
 sfx_silent:
  ld c,#0
@@ -433,6 +462,11 @@ sfx_volume:
  out (0xa0),a
  ld a,c
  call psg_volume_gain
+ out (0xa1),a
+ ld c,a
+ ld a,#9
+ out (0xa0),a
+ ld a,c
  out (0xa1),a
  ret
 sfx_periods:
