@@ -1,0 +1,32 @@
+{
+  "before": {
+    "sha256": "d8a8dd4811b4288280c5805c20106026024cfabb456793cd980acbc81cedae2c",
+    "audio": {
+      "bgm": {
+        "peak": 1080,
+        "rms": 94.87878630423305
+      },
+      "heal": {
+        "peak": 3293,
+        "rms": 452.31107802636245
+      }
+    },
+    "muted_at_rest": true
+  },
+  "after": {
+    "sha256": "1986ed916c61e002ad77eb9f58c6ccc88adba626e8c0d8d6717a7aeacf5f3758",
+    "audio": {
+      "bgm": {
+        "peak": 2146,
+        "rms": 191.2275657192979,
+        "rms_gain_db": 6.087627521480487
+      },
+      "heal": {
+        "peak": 6589,
+        "rms": 905.0914829234437,
+        "rms_gain_db": 6.025105069683195
+      }
+    },
+    "muted_at_rest": true
+  }
+}

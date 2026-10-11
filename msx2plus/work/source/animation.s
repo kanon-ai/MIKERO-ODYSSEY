@@ -322,7 +322,7 @@ fm_volume:
  or a
  jr z,fm_muted
  ld c,a
- ld a,#11
+ ld a,#9
  sub c
  ld c,a
  ld a,b
@@ -354,11 +354,11 @@ fm_delay:
  djnz fm_delay
  pop bc
  ret
-; Slightly louder than v1.7.3: +4 PSG steps, preserving exact silence.
+; +6 PSG steps (table maximum 9 -> 15), preserving exact silence.
 psg_volume_gain:
  or a
  ret z
- add a,#4
+ add a,#6
  ret
 ; Four short units per bar. Repeated attacks preserve the march's triplet.
 ; Historical upper melody D5/E5/F#5; the held E is re-articulated at a turn.
